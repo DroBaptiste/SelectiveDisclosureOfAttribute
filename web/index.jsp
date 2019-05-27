@@ -2,13 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Welcome !</title>
+    <title>Get assertion</title>
   </head>
   <body>
-    Welcome to the main page
-    <form action="./test" method="post">
-      <input type="text" value="" name="text">
-      <input type="submit" value="Press">
+    Clic bellow to get  assertion
+    <form action="./test">
+      <input type="submit" value="Get assertion">
     </form>
   </body>
 </html>
