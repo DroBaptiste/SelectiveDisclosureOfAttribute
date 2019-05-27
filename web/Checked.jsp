@@ -11,6 +11,6 @@
     <title>Congratulation</title>
 </head>
 <body>
-    Congratulation, it worked !
+    Congratulation, the transaction will (one day) be sent to <%= request.getParameter("address") %> !
 </body>
 </html>

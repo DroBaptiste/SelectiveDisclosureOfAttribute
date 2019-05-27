@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 
 public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        if(request.getParameter("code") == request.getParameter("inputCode")) {
+        if(request.getParameter("code").equals(request.getParameter("inputCode"))) {
             request.getRequestDispatcher("Checked.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Error, wrong check code");

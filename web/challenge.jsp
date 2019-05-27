@@ -12,7 +12,7 @@
 </head>
 <body>
     <form action="./test" method="post">
-        <input type="text" placeholder="ETH adress" name="text"></br>
+        <input type="text" placeholder="ETH adress" name="address"></br>
         Tapez le code suivant : ${code} </br>
         <input type="hidden" name="inputCode" value=${code} />
         <input type="text" placeholder="code" name="code">
