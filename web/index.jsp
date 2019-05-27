@@ -5,6 +5,7 @@
     <title>Get assertion</title>
   </head>
   <body>
+    ${error}
     Clic bellow to get  assertion
     <form action="./test">
       <input type="submit" value="Get assertion">

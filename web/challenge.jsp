@@ -14,6 +14,7 @@
     <form action="./test" method="post">
         <input type="text" placeholder="ETH adress" name="text"></br>
         Tapez le code suivant : ${code} </br>
+        <input type="hidden" name="inputCode" value=${code} />
         <input type="text" placeholder="code" name="code">
         <input type="submit" value="Press">
     </form>
