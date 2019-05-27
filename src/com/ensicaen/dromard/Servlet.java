@@ -12,7 +12,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<meta charset=\"utf-8\" />");
-            out.println("<title>"+request.getParameter("text")+"oui</title>");
+            out.println("<title>"+request.getParameter("text")+"non</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<p>Ceci est une page générée depuis une servlet.</p>");
