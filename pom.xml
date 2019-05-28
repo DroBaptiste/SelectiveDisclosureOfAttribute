@@ -26,6 +26,16 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.9.9</version>
         </dependency>
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>1.9.26</version>
+        </dependency>
     </dependencies>
     <groupId>mavenProject</groupId>
     <artifactId>SelectiveDisclosureOfAttribute</artifactId>
