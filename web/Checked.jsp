@@ -1,3 +1,4 @@
+<jsp:useBean id="balance" scope="request" type="java.math.BigInteger"/>
 <%--
   Created by IntelliJ IDEA.
   User: dromard
@@ -12,5 +13,6 @@
 </head>
 <body>
     Congratulation, the transaction will (one day) be sent to <%= request.getParameter("address") %> !
+You have ${balance} ETH !
 </body>
 </html>
