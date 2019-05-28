@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             HashMap<String, List<String>> attributes = new HashMap<String, List<String>>();
-            String issuer = "Issuer";
+            String issuer = "Issuesr";
             String subject = "Sujet";
             String privateKey = null;
             String publicKey = null;
