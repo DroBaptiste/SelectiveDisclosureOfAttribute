@@ -22,8 +22,18 @@ public class Assertion {
     private String attributeProvider;
     private String signatureOfIssuer;
     private Time startValidityInstant;
+
+    public String getURL() {
+        return URL;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
+    }
+
     private Time endValidityInstant;
     private String Value;
+    private String URL;
     private String blockchainAddressOfSubject;
 
     public Assertion(String attributeProvider, String value, String blockchainAddressOfSubject) {

@@ -1,5 +1,6 @@
 package Backend;
 
+import Utils.CryptoUtils;
 import org.apache.log4j.BasicConfigurator;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Response;
@@ -12,13 +13,15 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws SAXException, TransformerException, ParserConfigurationException, IOException {
+    public static void main(String[] args) throws SAXException, TransformerException, ParserConfigurationException, IOException, NoSuchAlgorithmException {
         Assertion assertion = new Assertion("ENSICAEN","Diplome d'ingénieur","Baptiste Dromard");
-        XMLFileTreatment.StringToFile(assertion.generateSAML());
+        assertion.setURL(XMLFileTreatment.StringToFile(assertion.generateSAML()));
+        System.out.println(CryptoUtils.sha256Payload(assertion.getBlockchainAddressOfSubject(),assertion.generateSAML(),assertion.getURL()));
     }
 }
