@@ -15,17 +15,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 
 public class CertManager {
 
-    /**
-     * gets credential used to sign saml assertionts that are produced. This method
-     * assumes the cert and pkcs formatted primary key are on file system. this data
-     * could be stored elsewhere e.g keystore
-     *
-     * a credential is used to sign saml response, and includes the private key
-     * as well as a cert for the public key
-     *
-     * @return
-     * @throws Throwable
-     */
     public Credential getSigningCredential(String publicKeyLocation, String privateKeyLocation) throws Throwable {
         // create public key (cert) portion of credential
         InputStream inStream = new FileInputStream(publicKeyLocation);

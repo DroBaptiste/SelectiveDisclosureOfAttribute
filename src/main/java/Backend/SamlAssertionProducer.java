@@ -26,7 +26,7 @@ public class SamlAssertionProducer {
 
     private String privateKeyLocation;
     private String publicKeyLocation;
-    private CertManager certManager = new CertManager();
+   // private CertManager certManager = new CertManager();
 
     public Response createSAMLResponse(final String subjectId, final DateTime authenticationTime,
                                        final String credentialType, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
@@ -223,7 +223,7 @@ public class SamlAssertionProducer {
         if (publicKeyLocation != null && privateKeyLocation != null) {
             SignatureBuilder builder = new SignatureBuilder();
             Signature signature = builder.buildObject();
-            signature.setSigningCredential(certManager.getSigningCredential(publicKeyLocation, privateKeyLocation));
+           // signature.setSigningCredential(certManager.getSigningCredential(publicKeyLocation, privateKeyLocation));
             signature.setSignatureAlgorithm(SignatureConstants.ALGO_ID_SIGNATURE_RSA_SHA1);
             signature.setCanonicalizationAlgorithm(SignatureConstants.ALGO_ID_C14N_EXCL_OMIT_COMMENTS);
 

@@ -1,5 +1,6 @@
 package Backend;
 
+import org.apache.log4j.BasicConfigurator;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Response;
 import org.opensaml.saml2.core.impl.ResponseMarshaller;
@@ -13,17 +14,18 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        BasicConfigurator.configure();
         try {
             HashMap<String, List<String>> attributes = new HashMap<String, List<String>>();
             String issuer = "Issuesr";
             String subject = "Sujet";
-            String privateKey = null;
-            String publicKey = null;
+           // String privateKey = null;
+           // String publicKey = null;
             Integer samlAssertionExpirationDays = 12;
 
             SamlAssertionProducer producer = new SamlAssertionProducer();
-            producer.setPrivateKeyLocation(privateKey);
-            producer.setPublicKeyLocation(publicKey);
+           // producer.setPrivateKeyLocation(privateKey);
+           // producer.setPublicKeyLocation(publicKey);
 
             Response responseInitial = producer.createSAMLResponse(subject, new DateTime(), "password", attributes, issuer, samlAssertionExpirationDays);
 
