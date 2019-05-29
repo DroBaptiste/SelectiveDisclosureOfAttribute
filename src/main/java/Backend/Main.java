@@ -6,40 +6,19 @@ import org.opensaml.saml2.core.Response;
 import org.opensaml.saml2.core.impl.ResponseMarshaller;
 import org.opensaml.xml.util.XMLHelper;
 import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
-        BasicConfigurator.configure();
-        try {
-            HashMap<String, List<String>> attributes = new HashMap<String, List<String>>();
-            String issuer = "Issuesr";
-            String subject = "Sujet";
-           // String privateKey = null;
-           // String publicKey = null;
-            Integer samlAssertionExpirationDays = 12;
-
-            SamlAssertionProducer producer = new SamlAssertionProducer();
-           // producer.setPrivateKeyLocation(privateKey);
-           // producer.setPublicKeyLocation(publicKey);
-
-            Response responseInitial = producer.createSAMLResponse(subject, new DateTime(), "password", attributes, issuer, samlAssertionExpirationDays);
-
-            ResponseMarshaller marshaller = new ResponseMarshaller();
-            Element element = marshaller.marshall(responseInitial);
-
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            XMLHelper.writeNode(element, baos);
-            String responseStr = new String(baos.toByteArray());
-
-            System.out.println(responseStr);
-
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
+    public static void main(String[] args) throws SAXException, TransformerException, ParserConfigurationException, IOException {
+        Assertion assertion = new Assertion("ENSICAEN","Diplome d'ingénieur","Baptiste Dromard");
+        XMLFileTreatment.StringToFile(assertion.generateSAML());
     }
 }

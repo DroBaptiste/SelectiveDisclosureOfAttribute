@@ -1,6 +1,16 @@
 package Backend;
 
+import org.apache.log4j.BasicConfigurator;
+import org.joda.time.DateTime;
+import org.opensaml.saml2.core.Response;
+import org.opensaml.saml2.core.impl.ResponseMarshaller;
+import org.opensaml.xml.util.XMLHelper;
+import org.w3c.dom.Element;
+
+import java.io.ByteArrayOutputStream;
 import java.sql.Time;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class Assertion {
@@ -17,16 +27,35 @@ public class Assertion {
     private String blockchainAddressOfSubject;
 
     //!-- Creation of a SAML file
-    public String generateSAML() throws Exception
-    {
-        return "";
+    String generateSAML() {
+        BasicConfigurator.configure();
+        try {
+            HashMap<String, List<String>> attributes = new HashMap<>();
+            String issuer = attributeProvider;
+            String subject = blockchainAddressOfSubject;
+            // String privateKey = null;
+            // String publicKey = null;
+            Integer samlAssertionExpirationDays = 12;
+
+            SamlAssertionProducer producer = new SamlAssertionProducer();
+            // producer.setPrivateKeyLocation(privateKey);
+            // producer.setPublicKeyLocation(publicKey);
+
+            Response responseInitial = producer.createSAMLResponse(subject, new DateTime(), "password", attributes, issuer, samlAssertionExpirationDays);
+
+            ResponseMarshaller marshaller = new ResponseMarshaller();
+            Element element = marshaller.marshall(responseInitial);
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            XMLHelper.writeNode(element, baos);
+            return new String(baos.toByteArray());
+
+        } catch (Throwable t) {
+            return "Fatal error:Creation of assertion";
+        }
     }
 
-
-
-    public Assertion(String idAssertion, String versionAssertion, String attributeProvider, String value, String blockchainAddressOfSubject) {
-        this.idAssertion = idAssertion;
-        this.versionAssertion = versionAssertion;
+    protected Assertion(String attributeProvider, String value, String blockchainAddressOfSubject) {
         this.attributeProvider = attributeProvider;
         Value = value;
         this.blockchainAddressOfSubject = blockchainAddressOfSubject;
