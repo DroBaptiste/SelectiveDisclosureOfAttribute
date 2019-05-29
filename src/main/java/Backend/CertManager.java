@@ -1,4 +1,4 @@
-package com.ensicaen.dromard.Backend;
+package Backend;
 
 
 import org.opensaml.xml.security.credential.Credential;

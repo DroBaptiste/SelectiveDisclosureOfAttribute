@@ -1,4 +1,4 @@
-package com.ensicaen.dromard.Servlet;
+package Servlets;
 
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;

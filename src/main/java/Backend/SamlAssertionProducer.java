@@ -1,4 +1,4 @@
-package com.ensicaen.dromard.Backend;
+package Backend;
 
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;
