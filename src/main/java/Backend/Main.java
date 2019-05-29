@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) throws SAXException, TransformerException, ParserConfigurationException, IOException, NoSuchAlgorithmException {
         Assertion assertion = new Assertion("ENSICAEN","Diplome d'ingénieur","Baptiste Dromard");
-        assertion.setURL(XMLFileTreatment.StringToFile(assertion.generateSAML()));
-        System.out.println(CryptoUtils.sha256Payload(assertion.getBlockchainAddressOfSubject(),assertion.generateSAML(),assertion.getURL()));
+        System.out.println(CryptoUtils.sha256Payload(assertion.getBlockchainAddressOfSubject(),assertion.getSamlString()
+                ,assertion.getURL()));
     }
 }

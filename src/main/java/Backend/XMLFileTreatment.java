@@ -29,7 +29,7 @@ public class XMLFileTreatment {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
 
-        String path = "D://"+ generateFileName();
+        String path = "D://Stage2A//"+ generateFileName();
         StreamResult result =  new StreamResult(new File(path));
         transformer.transform(source, result);
         return path;
