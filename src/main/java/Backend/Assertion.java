@@ -26,8 +26,14 @@ public class Assertion {
     private String Value;
     private String blockchainAddressOfSubject;
 
+    public Assertion(String attributeProvider, String value, String blockchainAddressOfSubject) {
+        this.attributeProvider = attributeProvider;
+        Value = value;
+        this.blockchainAddressOfSubject = blockchainAddressOfSubject;
+    }
+
     //!-- Creation of a SAML file
-    String generateSAML() {
+    public String generateSAML() {
         BasicConfigurator.configure();
         try {
             HashMap<String, List<String>> attributes = new HashMap<>();
@@ -53,12 +59,6 @@ public class Assertion {
         } catch (Throwable t) {
             return "Fatal error:Creation of assertion";
         }
-    }
-
-    protected Assertion(String attributeProvider, String value, String blockchainAddressOfSubject) {
-        this.attributeProvider = attributeProvider;
-        Value = value;
-        this.blockchainAddressOfSubject = blockchainAddressOfSubject;
     }
 
     public String getIdAssertion() {

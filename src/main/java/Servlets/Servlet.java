@@ -1,33 +1,37 @@
 package Servlets;
 
-import org.web3j.protocol.Web3j;
-import org.web3j.protocol.core.DefaultBlockParameterName;
-import org.web3j.protocol.core.methods.response.EthGetBalance;
-import org.web3j.protocol.core.methods.response.Web3ClientVersion;
-import org.web3j.protocol.http.HttpService;
+import Backend.Assertion;
+import Backend.XMLFileTreatment;
+import Utils.Utils;
+import Utils.Web3Utils;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.concurrent.ExecutionException;
 
 
 public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         if(request.getParameter("code").equals(request.getParameter("inputCode"))) {
-            Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/e7f83aeaafd14cb797f74930d2ec4695"));
-            Web3ClientVersion web3ClientVersion = web3.web3ClientVersion().send();
-            String clientVersion = web3ClientVersion.getWeb3ClientVersion();
-            System.out.println(clientVersion);
-            EthGetBalance ethGetBalance = null;
+            BigInteger balance = null;
+            Assertion assertion = new Assertion("ENSICAEN","Diplome d'ingénieur",request.getParameter("address"));
+            String path = null;
             try {
-                ethGetBalance = web3
-                        .ethGetBalance(request.getParameter("address"), DefaultBlockParameterName.LATEST)
-                        .sendAsync()
-                        .get();
-            } catch (InterruptedException | ExecutionException e) {
+                path = XMLFileTreatment.StringToFile(assertion.generateSAML());
+            } catch (SAXException | ParserConfigurationException | TransformerException e) {
                 e.printStackTrace();
             }
-            assert ethGetBalance != null;
-            request.setAttribute("balance", ethGetBalance.getBalance());
+            try {
+                balance = Web3Utils.getBalance(request.getParameter("address"));
+            } catch (ExecutionException | InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            request.setAttribute("path", path);
+            request.setAttribute("balance", balance);
             request.getRequestDispatcher("Checked.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Error, wrong check code");
@@ -36,7 +40,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String code = Utils.Utils.randomAlphaNumeric(10);
+        String code = Utils.randomAlphaNumeric(10);
         request.setAttribute("code", code);
         request.getRequestDispatcher("challenge.jsp").forward(request, response);
     }

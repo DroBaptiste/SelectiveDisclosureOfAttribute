@@ -17,8 +17,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 
-class XMLFileTreatment {
-    protected static void StringToFile(String xmlSource) throws SAXException, ParserConfigurationException, IOException, TransformerException {
+public class XMLFileTreatment {
+    public static String StringToFile(String xmlSource) throws SAXException, ParserConfigurationException, IOException, TransformerException {
         // Parse the given input
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -29,8 +29,10 @@ class XMLFileTreatment {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
 
-        StreamResult result =  new StreamResult(new File("C:\\Users\\Menad\\Desktop\\"+ generateFileName()));
+        String path = "/home/dromard/Documents/"+ generateFileName();
+        StreamResult result =  new StreamResult(new File(path));
         transformer.transform(source, result);
+        return path;
     }
 
     private static String generateFileName(){
