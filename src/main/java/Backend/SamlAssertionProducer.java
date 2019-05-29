@@ -219,7 +219,7 @@ public class SamlAssertionProducer {
         return status;
     }
 
-    private Signature createSignature() throws Throwable {
+    private Signature createSignature() {
         if (publicKeyLocation != null && privateKeyLocation != null) {
             SignatureBuilder builder = new SignatureBuilder();
             Signature signature = builder.buildObject();
