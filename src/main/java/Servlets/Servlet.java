@@ -17,10 +17,19 @@ public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         if(request.getParameter("code").equals(request.getParameter("inputCode"))) {
             BigInteger balance = null;
-            Assertion assertion = new Assertion("ENSICAEN","Diplome d'ingénieur",request.getParameter("address"));
+            Assertion assertion = null;
+            try {
+                assertion = new Assertion("ENSICAEN","Diplome d'ingénieur",request.getParameter("address"));
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (TransformerException e) {
+                e.printStackTrace();
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            }
             String path = null;
             try {
-                path = XMLFileTreatment.StringToFile(assertion.generateSAML());
+                path = XMLFileTreatment.StringToFile(assertion.getSamlString());
             } catch (SAXException | ParserConfigurationException | TransformerException e) {
                 e.printStackTrace();
             }

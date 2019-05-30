@@ -24,9 +24,6 @@ import java.util.UUID;
 
 public class SamlAssertionProducer {
 
-    private String privateKeyLocation;
-    private String publicKeyLocation;
-   // private CertManager certManager = new CertManager();
 
     public Response createSAMLResponse(final String subjectId, final DateTime authenticationTime,
                                        final String credentialType, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
@@ -34,7 +31,6 @@ public class SamlAssertionProducer {
         try {
             DefaultBootstrap.bootstrap();
 
-            Signature signature = createSignature();
             Status status = createStatus();
             Issuer responseIssuer = null;
             Issuer assertionIssuer = null;
@@ -59,14 +55,14 @@ public class SamlAssertionProducer {
             Assertion assertion = createAssertion(new DateTime(), subject, assertionIssuer, authnStatement, attributeStatement);
 
             Response response = createResponse(new DateTime(), responseIssuer, status, assertion);
-            response.setSignature(signature);
+           // response.setSignature(signature);
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(response);
 
-            if (signature != null) {
+           /* if (signature != null) {
                 Signer.signObject(signature);
-            }
+            }*/
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             XMLHelper.writeNode(element, baos);
@@ -79,21 +75,6 @@ public class SamlAssertionProducer {
         }
     }
 
-    public String getPrivateKeyLocation() {
-        return privateKeyLocation;
-    }
-
-    public void setPrivateKeyLocation(String privateKeyLocation) {
-        this.privateKeyLocation = privateKeyLocation;
-    }
-
-    public String getPublicKeyLocation() {
-        return publicKeyLocation;
-    }
-
-    public void setPublicKeyLocation(String publicKeyLocation) {
-        this.publicKeyLocation = publicKeyLocation;
-    }
 
     private Response createResponse(final DateTime issueDate, Issuer issuer, Status status, Assertion assertion) {
         ResponseBuilder responseBuilder = new ResponseBuilder();
@@ -166,7 +147,7 @@ public class SamlAssertionProducer {
         // create authcontextclassref object
         AuthnContextClassRefBuilder classRefBuilder = new AuthnContextClassRefBuilder();
         AuthnContextClassRef classRef = classRefBuilder.buildObject();
-        classRef.setAuthnContextClassRef("urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport");
+        classRef.setAuthnContextClassRef("urn:oasis:names:tc:SAML:2.0:ac:classes:selfSouvreignIdentity");
 
         // create authcontext object
         AuthnContextBuilder authContextBuilder = new AuthnContextBuilder();
@@ -217,19 +198,5 @@ public class SamlAssertionProducer {
         status.setStatusCode(statusCode);
 
         return status;
-    }
-
-    private Signature createSignature() {
-        if (publicKeyLocation != null && privateKeyLocation != null) {
-            SignatureBuilder builder = new SignatureBuilder();
-            Signature signature = builder.buildObject();
-           // signature.setSigningCredential(certManager.getSigningCredential(publicKeyLocation, privateKeyLocation));
-            signature.setSignatureAlgorithm(SignatureConstants.ALGO_ID_SIGNATURE_RSA_SHA1);
-            signature.setCanonicalizationAlgorithm(SignatureConstants.ALGO_ID_C14N_EXCL_OMIT_COMMENTS);
-
-            return signature;
-        }
-
-        return null;
     }
 }

@@ -6,8 +6,12 @@ import org.opensaml.saml2.core.Response;
 import org.opensaml.saml2.core.impl.ResponseMarshaller;
 import org.opensaml.xml.util.XMLHelper;
 import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.sql.Time;
 import java.util.HashMap;
 import java.util.List;
@@ -23,31 +27,42 @@ public class Assertion {
     private String signatureOfIssuer;
     private Time startValidityInstant;
     private Time endValidityInstant;
-    private String Value;
+    private String value;
+    private String URL;
     private String blockchainAddressOfSubject;
+    private String samlString;
 
-    public Assertion(String attributeProvider, String value, String blockchainAddressOfSubject) {
-        this.attributeProvider = attributeProvider;
-        Value = value;
-        this.blockchainAddressOfSubject = blockchainAddressOfSubject;
+    public String getURL() {
+        return URL;
     }
 
-    //!-- Creation of a SAML file
-    public String generateSAML() {
+    public void setURL(String URL) {
+        this.URL = URL;
+    }
+
+
+
+    public Assertion(String _attributeProvider, String _value, String _blockchainAddressOfSubject) throws SAXException, TransformerException, ParserConfigurationException, IOException {
+        this.attributeProvider = _attributeProvider;
+        this.value = _value;
+        this.blockchainAddressOfSubject = _blockchainAddressOfSubject;
+        URL = XMLFileTreatment.StringToFile(generateSAML());
+    }
+
+
+
+    private String generateSAML() {
         BasicConfigurator.configure();
         try {
             HashMap<String, List<String>> attributes = new HashMap<>();
             String issuer = attributeProvider;
             String subject = blockchainAddressOfSubject;
-            // String privateKey = null;
-            // String publicKey = null;
+
             Integer samlAssertionExpirationDays = 12;
 
             SamlAssertionProducer producer = new SamlAssertionProducer();
-            // producer.setPrivateKeyLocation(privateKey);
-            // producer.setPublicKeyLocation(publicKey);
-
-            Response responseInitial = producer.createSAMLResponse(subject, new DateTime(), "password", attributes, issuer, samlAssertionExpirationDays);
+            Response responseInitial = producer.createSAMLResponse(subject, new DateTime(),
+                    "password", attributes, issuer, samlAssertionExpirationDays);
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(responseInitial);
@@ -118,11 +133,11 @@ public class Assertion {
     }
 
     public String getValue() {
-        return Value;
+        return value;
     }
 
     public void setValue(String value) {
-        Value = value;
+        this.value = value;
     }
 
     public String getBlockchainAddressOfSubject() {
@@ -131,5 +146,13 @@ public class Assertion {
 
     public void setBlockchainAddressOfSubject(String blockchainAddressOfSubject) {
         this.blockchainAddressOfSubject = blockchainAddressOfSubject;
+    }
+
+    public String getSamlString() {
+        return samlString;
+    }
+
+    public void setSamlString(String samlString) {
+        this.samlString = samlString;
     }
 }
