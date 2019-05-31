@@ -3,11 +3,12 @@
 
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
-| Summary| Description|
-| ------------- | -------|
-| [Registration](#registration-pencil)  | Registration tools |
-| [Consulting](#consulting-eyes) | Consultation tools |
-|[Utility](#utility-wrench)| Utility tools |
+| Summary|
+| ------------- |
+| *[Registration](#registration-pencil)  | 
+| *[Consulting](#consulting-eyes) |
+| *[Utility](#utility-wrench)|
+|   *CryptoUtils
 
 ## Registration :pencil:
 
