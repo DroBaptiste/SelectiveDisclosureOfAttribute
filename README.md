@@ -1,14 +1,13 @@
 # SelectiveDisclosureOfAttribute
-@menadMezred
-@DroBaptiste
+
 
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
-## Registration
+## Registration :page_facing_up:
 
 The content of ```src/main/java/Register``` is related to the Registration tool.
 
-## Consulting
+## Consulting :eyes:
 
 The content of ```src/main/java/Consult``` is related the Consulting tool.
 
