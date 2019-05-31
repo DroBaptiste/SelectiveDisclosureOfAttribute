@@ -7,7 +7,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
-import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import java.io.*;
@@ -29,10 +28,49 @@ public class ReadXMLFile {
         String id = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
             Node nNode =nodeList.item(temp);
-            System.out.println("\nCurrent Element :" + nNode.getNodeName());
-            System.out.println(nNode.getAttributes().getNamedItem("ID").getNodeValue());
+            id = nNode.getAttributes().getNamedItem("ID").getNodeValue();
         }
         return id;
+    }
+
+    public static String getVersion(Document doc){
+        NodeList nodeList = doc.getElementsByTagName("saml2p:Response");
+        String version = "";
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode =nodeList.item(temp);
+            version = nNode.getAttributes().getNamedItem("Version").getNodeValue();
+        }
+        return version;
+    }
+
+    public static String getIssueInstant(Document doc){
+        NodeList nodeList = doc.getElementsByTagName("saml2p:Response");
+        String instant = "";
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode =nodeList.item(temp);
+            instant = nNode.getAttributes().getNamedItem("IssueInstant").getNodeValue();
+        }
+        return instant;
+    }
+
+    public static String getAP(Document doc){
+        NodeList nodeList = doc.getElementsByTagName("saml2:Issuer");
+        String AP = "";
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode =nodeList.item(temp);
+            AP = nNode.getFirstChild().getNodeValue();
+        }
+        return AP;
+    }
+
+    public static String getSubject(Document doc){
+        NodeList nodeList = doc.getElementsByTagName("saml2:Subject");
+        String subject = "";
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode =nodeList.item(temp);
+            subject = nNode.getFirstChild().getFirstChild().getNodeValue();
+        }
+        return subject;
     }
 
     public static String file2String(File file) throws IOException {

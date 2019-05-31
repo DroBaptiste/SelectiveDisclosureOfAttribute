@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
         String path = "D://Stage2A//LoSUJ52mXKleKiwFHtVI.xml";
-        SamlVerificator.getAssertion(path);
+        SamlVerificator samlVerificator = new SamlVerificator();
+                System.out.println(samlVerificator.getAssertion(path).getBlockchainAddressOfSubject());
     }
 }
