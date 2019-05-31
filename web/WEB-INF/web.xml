@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>Servlet</servlet-name>
-        <servlet-class>Servlets.Servlet</servlet-class>
+        <servlet-class>Register.Servlets.Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>

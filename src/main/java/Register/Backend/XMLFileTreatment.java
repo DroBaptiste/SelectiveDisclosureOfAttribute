@@ -1,6 +1,6 @@
-package Backend;
+package Register.Backend;
 
-import Utils.Utils;
+import Register.Utils.Utils;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
