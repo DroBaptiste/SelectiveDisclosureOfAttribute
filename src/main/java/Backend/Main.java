@@ -20,8 +20,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws SAXException, TransformerException, ParserConfigurationException, IOException, NoSuchAlgorithmException {
-        Assertion assertion = new Assertion("ENSICAEN","Diplome d'ingénieur","Baptiste Dromard");
-        System.out.println(CryptoUtils.sha256Payload(assertion.getBlockchainAddressOfSubject(),assertion.getSamlString()
-                ,assertion.getURL()));
+        Assertion assertion = new Assertion("ENSICAEN", "Diplome d'ingénieur", "Baptiste Dromard");
+        System.out.println(CryptoUtils.sha256Payload(assertion.getBlockchainAddressOfSubject(), assertion.getSamlString()
+                , assertion.getURL()));
+        System.out.println(assertion.getSamlString());
     }
 }

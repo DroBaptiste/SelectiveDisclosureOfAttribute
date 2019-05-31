@@ -46,7 +46,8 @@ public class Assertion {
         this.attributeProvider = _attributeProvider;
         this.value = _value;
         this.blockchainAddressOfSubject = _blockchainAddressOfSubject;
-        URL = XMLFileTreatment.StringToFile(generateSAML());
+        this.samlString = generateSAML();
+        URL = XMLFileTreatment.StringToFile(samlString);
     }
 
 
