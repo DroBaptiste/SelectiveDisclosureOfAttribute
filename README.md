@@ -3,7 +3,7 @@
 
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
-## Registration :page_facing_up:
+## Registration :pencil:
 
 The content of ```src/main/java/Register``` is related to the Registration tool.
 
@@ -11,7 +11,7 @@ The content of ```src/main/java/Register``` is related to the Registration tool.
 
 The content of ```src/main/java/Consult``` is related the Consulting tool.
 
-## Utility
+## Utility :wrench:
 
 the folder ```src/main/java/Utils``` contains all the utility function.
 
