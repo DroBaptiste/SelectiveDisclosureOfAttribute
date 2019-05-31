@@ -3,7 +3,7 @@
 
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
-*Summary*
+## Summary
 * [Registration](#registration-pencil)   
 * [Consulting](#consulting-eyes) 
 * [Utility](#utility-wrench)    
