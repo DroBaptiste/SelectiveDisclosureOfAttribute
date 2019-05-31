@@ -10,8 +10,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class ReadXMLFile {
 
@@ -25,13 +24,31 @@ public class ReadXMLFile {
         return doc;
     }
 
-    public static void getElement(Document doc, String _element){
-        NodeList nodeList = doc.getElementsByTagName(_element);
+    public static String getIdAssertion(Document doc){
+        NodeList nodeList = doc.getElementsByTagName("saml2p:Response");
+        String id = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
-
             Node nNode =nodeList.item(temp);
             System.out.println("\nCurrent Element :" + nNode.getNodeName());
-            System.out.println(nNode.getChildNodes().item(0).getChildNodes().item(0).getNodeValue());
+            System.out.println(nNode.getAttributes().getNamedItem("ID").getNodeValue());
+        }
+        return id;
+    }
+
+    public static String file2String(File file) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String         line = null;
+        StringBuilder  stringBuilder = new StringBuilder();
+        String         ls = System.getProperty("line.separator");
+
+        try {
+            while((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+                stringBuilder.append(ls);
+            }
+            return stringBuilder.toString();
+        } finally {
+            reader.close();
         }
     }
 }
