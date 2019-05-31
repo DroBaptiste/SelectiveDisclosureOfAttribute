@@ -1,4 +1,4 @@
-package Utils.Assertion;
+package utils.assertion;
 
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;

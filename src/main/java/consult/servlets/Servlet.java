@@ -1,9 +1,9 @@
-package Consult.Servlets;
+package consult.servlets;
 
-import Utils.Assertion.Assertion;
-import Utils.Assertion.SamlVerificator;
-import Utils.Web3Utils;
 import org.xml.sax.SAXException;
+import utils.Web3Utils;
+import utils.assertion.Assertion;
+import utils.assertion.SamlVerificator;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         try {
             Assertion assertion = samlVerificator.getAssertion(path);
             address = assertion.getBlockchainAddressOfSubject();
-            hash = "0x" + Utils.CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
+            hash = "0x" + utils.CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
             request.setAttribute("address", address);
             request.setAttribute("path", path);
             request.setAttribute("hash", hash);

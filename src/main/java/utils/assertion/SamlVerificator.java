@@ -1,8 +1,8 @@
-package Utils.Assertion;
+package utils.assertion;
 
-import Utils.XML.ReadXMLFile;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+import utils.xml.ReadXMLFile;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;

@@ -1,10 +1,10 @@
-package Register.Servlets;
+package register.servlets;
 
-import Assertion;
-import SamlVerificator;
-import Utils.CryptoUtils;
-import Utils.Randomizer;
-import Utils.Web3Utils;
+import utils.CryptoUtils;
+import utils.Randomizer;
+import utils.Web3Utils;
+import utils.assertion.Assertion;
+import utils.assertion.SamlVerificator;
 
 import java.io.IOException;
 import java.math.BigInteger;

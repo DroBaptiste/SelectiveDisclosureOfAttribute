@@ -1,9 +1,9 @@
-package Utils.XML;
+package utils.xml;
 
-import Utils.Randomizer;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import utils.Randomizer;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

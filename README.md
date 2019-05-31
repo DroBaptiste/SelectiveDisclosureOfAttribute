@@ -8,7 +8,7 @@ This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 * [Consulting](#consulting-eyes) 
 * [Utility](#utility-wrench)    
   * [CryptoUtils](#CryptoUtils)
-  * [Utils](#Utils)
+  * [utils](#Utils)
   * [Web3Utils](#Web3Utils)
 
 ## Registration :pencil:
@@ -21,13 +21,13 @@ The content of ```src/main/java/Consult``` is related the Consulting tool.
 
 ## Utility :wrench:
 
-the folder ```src/main/java/Utils``` contains all the utility function.
+the folder ```src/main/java/utils``` contains all the utility function.
 
 ###### CryptoUtils
 
 CryptoUtils contain the function needed to hash the contain to place in the blockchain such as ```address + assertion + URL```
 
-###### Utils (to be renamed)
+###### utils (to be renamed)
 
 This folder contains a function to generate random name that we use to place the assertion or generate a random challenge
 

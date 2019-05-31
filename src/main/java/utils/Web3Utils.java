@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.RawTransaction;
@@ -46,17 +46,13 @@ public class Web3Utils {
         String hexValue = Numeric.toHexString(signedMessage);
         EthSendTransaction ethSendTransaction = web3.ethSendRawTransaction(hexValue).send();
 
-        String transactionHash = ethSendTransaction.getTransactionHash();
-        return transactionHash;
+        return ethSendTransaction.getTransactionHash();
 
     }
 
     public static boolean verifyAssertion(String hashBlockchain, String hash) throws IOException {
         Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
         Optional<Transaction> tx = web3.ethGetTransactionByHash(hashBlockchain).send().getTransaction();
-        if (tx.isPresent()) {
-            return tx.get().getInput().equals(hash);
-        }
-        return false;
+        return tx.map(transaction -> transaction.getInput().equals(hash)).orElse(false);
     }
 }

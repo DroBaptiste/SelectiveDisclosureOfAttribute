@@ -1,6 +1,5 @@
-package Utils.Assertion;
+package utils.assertion;
 
-import Utils.XML.XMLFileTreatment;
 import org.apache.log4j.BasicConfigurator;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Response;
@@ -8,6 +7,7 @@ import org.opensaml.saml2.core.impl.ResponseMarshaller;
 import org.opensaml.xml.util.XMLHelper;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import utils.xml.XMLFileTreatment;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -41,8 +41,7 @@ public class Assertion {
         return URL;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    Assertion() {
     }
 
 
@@ -55,7 +54,8 @@ public class Assertion {
         URL = XMLFileTreatment.StringToFile(samlString);
     }
 
-    public Assertion() {
+    void setURL(String URL) {
+        this.URL = URL;
     }
 
     private String generateSAML() {
@@ -87,7 +87,7 @@ public class Assertion {
         return idAssertion;
     }
 
-    public void setIdAssertion(String idAssertion) {
+    void setIdAssertion(String idAssertion) {
         this.idAssertion = idAssertion;
     }
 
@@ -95,7 +95,7 @@ public class Assertion {
         return versionAssertion;
     }
 
-    public void setVersionAssertion(String versionAssertion) {
+    void setVersionAssertion(String versionAssertion) {
         this.versionAssertion = versionAssertion;
     }
 
@@ -103,7 +103,7 @@ public class Assertion {
         return issueInstant;
     }
 
-    public void setIssueInstant(String issueInstant) {
+    void setIssueInstant(String issueInstant) {
         this.issueInstant = issueInstant;
     }
 
@@ -111,7 +111,7 @@ public class Assertion {
         return attributeProvider;
     }
 
-    public void setAttributeProvider(String attributeProvider) {
+    void setAttributeProvider(String attributeProvider) {
         this.attributeProvider = attributeProvider;
     }
 
@@ -151,7 +151,7 @@ public class Assertion {
         return blockchainAddressOfSubject;
     }
 
-    public void setBlockchainAddressOfSubject(String blockchainAddressOfSubject) {
+    void setBlockchainAddressOfSubject(String blockchainAddressOfSubject) {
         this.blockchainAddressOfSubject = blockchainAddressOfSubject;
     }
 
@@ -159,7 +159,7 @@ public class Assertion {
         return samlString;
     }
 
-    public void setSamlString(String samlString) {
+    void setSamlString(String samlString) {
         this.samlString = samlString;
     }
 }

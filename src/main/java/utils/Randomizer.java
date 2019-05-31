@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 public class Randomizer {
     private static final String ALPHA_NUMERIC_STRING = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

@@ -1,4 +1,4 @@
-package Utils.XML;
+package utils.xml;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -76,19 +76,16 @@ public class ReadXMLFile {
     }
 
     public static String file2String(File file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String         line = null;
-        StringBuilder  stringBuilder = new StringBuilder();
-        String         ls = System.getProperty("line.separator");
 
-        try {
-            while((line = reader.readLine()) != null) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line);
                 stringBuilder.append(ls);
             }
             return stringBuilder.toString();
-        } finally {
-            reader.close();
         }
     }
 }
