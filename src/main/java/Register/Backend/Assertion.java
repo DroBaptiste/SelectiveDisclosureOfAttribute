@@ -22,15 +22,19 @@ public class Assertion {
     //!-- Attribute of assertion
     private String idAssertion;
     private String versionAssertion;
-    private Time issueInstant;
+    private String issueInstant;
     private String attributeProvider;
+    private String URL;
+    private String samlString;
+
     private String signatureOfIssuer;
     private Time startValidityInstant;
     private Time endValidityInstant;
     private String value;
-    private String URL;
+
+
     private String blockchainAddressOfSubject;
-    private String samlString;
+
 
     public String getURL() {
         return URL;
@@ -50,7 +54,8 @@ public class Assertion {
         URL = XMLFileTreatment.StringToFile(samlString);
     }
 
-
+    public Assertion() {
+    }
 
     private String generateSAML() {
         BasicConfigurator.configure();
@@ -93,11 +98,11 @@ public class Assertion {
         this.versionAssertion = versionAssertion;
     }
 
-    public Time getIssueInstant() {
+    public String getIssueInstant() {
         return issueInstant;
     }
 
-    public void setIssueInstant(Time issueInstant) {
+    public void setIssueInstant(String issueInstant) {
         this.issueInstant = issueInstant;
     }
 
