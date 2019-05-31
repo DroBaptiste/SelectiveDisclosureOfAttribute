@@ -50,7 +50,8 @@ public class Assertion {
         URL = XMLFileTreatment.StringToFile(samlString);
     }
 
-
+    public Assertion() {
+    }
 
     private String generateSAML() {
         BasicConfigurator.configure();
