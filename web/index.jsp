@@ -1,14 +1,17 @@
-<%-- Created by IntelliJ IDEA. --%>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: dromard
+  Date: 31/05/19
+  Time: 12.06
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>Get assertion</title>
-  </head>
-  <body>
-    ${error}
-    Clic below to get  assertion
-    <form action="test">
-      <input type="submit" value="Get assertion">
-    </form>
-  </body>
+<head>
+    <title>Main menu</title>
+</head>
+<body>
+    <a href = Register>Register</a>
+    <a href = Consult>Consult</a>
+</body>
 </html>
