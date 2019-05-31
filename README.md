@@ -6,9 +6,11 @@ This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 ### Summary
 * [Registration](#registration-pencil)   
 * [Consulting](#consulting-eyes) 
-* [Utility](#utility-wrench)    
-  * [CryptoUtils](#CryptoUtils)
-  * [Utils](#Utils)
+* [Utility](#utility-wrench)   
+  * [Assertion](#assertion)
+  * [XML](#xml)
+  * [CryptoUtils](#cryptoutils)
+  * [Randomize](#randomize)
   * [Web3Utils](#Web3Utils)
 
 ## Registration :pencil:
