@@ -1,16 +1,25 @@
 # SelectiveDisclosureOfAttribute
 
+
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
-## Registration
+### Summary
+* [Registration](#registration-pencil)   
+* [Consulting](#consulting-eyes) 
+* [Utility](#utility-wrench)    
+  * [CryptoUtils](#CryptoUtils)
+  * [Utils](#Utils)
+  * [Web3Utils](#Web3Utils)
+
+## Registration :pencil:
 
 The content of ```src/main/java/Register``` is related to the Registration tool.
 
-## Consulting
+## Consulting :eyes:
 
 The content of ```src/main/java/Consult``` is related the Consulting tool.
 
-## Utility
+## Utility :wrench:
 
 the folder ```src/main/java/Utils``` contains all the utility function.
 
