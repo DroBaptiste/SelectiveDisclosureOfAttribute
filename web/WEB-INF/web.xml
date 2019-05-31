@@ -5,11 +5,20 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd" version="2.5">
 
     <servlet>
-        <servlet-name>Servlet</servlet-name>
+        <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>Register.Servlets.Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Servlet</servlet-name>
+        <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register/test</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ConsultServlet</servlet-name>
+        <servlet-class>Consult.Servlets.Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConsultServlet</servlet-name>
+        <url-pattern>/Consult/servlet</url-pattern>
     </servlet-mapping>
 </web-app>
