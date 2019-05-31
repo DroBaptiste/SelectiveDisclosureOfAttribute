@@ -1,6 +1,6 @@
 package Register.Backend;
 
-import Register.Utils.CryptoUtils;
+import Utils.CryptoUtils;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

@@ -1,9 +1,9 @@
 package Register.Servlets;
 
 import Register.Backend.Assertion;
-import Register.Utils.CryptoUtils;
-import Register.Utils.Utils;
-import Register.Utils.Web3Utils;
+import Utils.CryptoUtils;
+import Utils.Utils;
+import Utils.Web3Utils;
 
 import java.io.IOException;
 import java.math.BigInteger;

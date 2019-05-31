@@ -1,4 +1,4 @@
-package Register.Utils;
+package Utils;
 
 import org.apache.commons.codec.binary.Hex;
 
