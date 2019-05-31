@@ -1,6 +1,6 @@
-package Backend;
+package Register.Backend;
 
-import Utils.Utils;
+import Register.Utils.Utils;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -29,7 +29,7 @@ public class XMLFileTreatment {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
 
-        String path = "D://Stage2A//"+ generateFileName();
+        String path = "../"+ generateFileName();
         StreamResult result =  new StreamResult(new File(path));
         transformer.transform(source, result);
         return path;

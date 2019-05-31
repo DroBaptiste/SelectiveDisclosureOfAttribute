@@ -1,4 +1,4 @@
-package Backend;
+package Register.Backend;
 
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;
@@ -8,10 +8,6 @@ import org.opensaml.saml2.core.*;
 import org.opensaml.saml2.core.impl.*;
 import org.opensaml.xml.schema.XSString;
 import org.opensaml.xml.schema.impl.XSStringBuilder;
-import org.opensaml.xml.signature.Signature;
-import org.opensaml.xml.signature.SignatureConstants;
-import org.opensaml.xml.signature.Signer;
-import org.opensaml.xml.signature.impl.SignatureBuilder;
 import org.opensaml.xml.util.XMLHelper;
 import org.w3c.dom.Element;
 

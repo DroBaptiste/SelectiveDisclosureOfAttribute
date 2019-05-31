@@ -1,4 +1,4 @@
-package Utils;
+package Register.Utils;
 
 public class Utils {
     private static final String ALPHA_NUMERIC_STRING = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
