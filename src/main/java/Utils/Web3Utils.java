@@ -29,7 +29,7 @@ public class Web3Utils {
                     .get();
             return ethGetBalance.getBalance();
     }
-    static String doTransaction(String address, String hash) throws Exception {
+    public static String doTransaction(String address, String hash) throws Exception {
         BigInteger gasprice = BigInteger.valueOf(30000);
         BigInteger gaslimit = BigInteger.valueOf(30000);
 

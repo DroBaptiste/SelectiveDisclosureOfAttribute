@@ -1,16 +1,12 @@
 package Servlets;
 
 import Backend.Assertion;
-import Backend.XMLFileTreatment;
+import Utils.CryptoUtils;
 import Utils.Utils;
 import Utils.Web3Utils;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.util.concurrent.ExecutionException;
 
 
 public class Servlet extends javax.servlet.http.HttpServlet {
@@ -18,30 +14,27 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         if(request.getParameter("code").equals(request.getParameter("inputCode"))) {
             BigInteger balance = null;
             Assertion assertion = null;
+            String hashBlockchain;
+            String path = "";
+            String address = request.getParameter("address");
             try {
-                assertion = new Assertion("ENSICAEN","Diplome d'ingénieur",request.getParameter("address"));
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (TransformerException e) {
-                e.printStackTrace();
-            } catch (ParserConfigurationException e) {
+                assertion = new Assertion("ENSICAEN","Diplome d'ingénieur", address);
+                path = assertion.getURL();
+                String payload = CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
+                hashBlockchain = Web3Utils.doTransaction(address, payload);
+                request.setAttribute("address", address);
+                request.setAttribute("path", path);
+                request.setAttribute("hash", hashBlockchain);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-            String path = null;
-            try {
-                path = XMLFileTreatment.StringToFile(assertion.getSamlString());
-            } catch (SAXException | ParserConfigurationException | TransformerException e) {
-                e.printStackTrace();
-            }
-            try {
-                balance = Web3Utils.getBalance(request.getParameter("address"));
-            } catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
+            if (path.isEmpty()) {
+                request.setAttribute("error", "Error, can't handle the request");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            } else {
+                request.getRequestDispatcher("Checked.jsp").forward(request, response);
             }
 
-            request.setAttribute("path", path);
-            request.setAttribute("balance", balance);
-            request.getRequestDispatcher("Checked.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Error, wrong check code");
             request.getRequestDispatcher("index.jsp").forward(request, response);

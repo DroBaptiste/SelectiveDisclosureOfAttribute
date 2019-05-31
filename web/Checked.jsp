@@ -1,5 +1,3 @@
-<jsp:useBean id="path" scope="request" type="java.lang.String"/>
-<jsp:useBean id="balance" scope="request" type="java.math.BigInteger"/>
 <%--
   Created by IntelliJ IDEA.
   User: dromard
@@ -13,8 +11,7 @@
     <title>Congratulation</title>
 </head>
 <body>
-Congratulation, the transaction will (one day) be sent to <%= request.getParameter("address") %> !<br>
-You have ${balance} ETH !<br>
+Congratulation, the transaction sent to <%= request.getParameter("address") %> with hash ${hash}!<br>
 Your assertion is at ${path}
 </body>
 </html>
