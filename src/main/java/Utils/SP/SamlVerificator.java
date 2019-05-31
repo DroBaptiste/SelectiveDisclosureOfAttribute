@@ -1,14 +1,12 @@
-package SP;
+package Utils.SP;
 
-import Backend.Assertion;
+import Register.Backend.Assertion;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Time;
-import java.util.Date;
 
 public class SamlVerificator {
 
@@ -17,7 +15,7 @@ public class SamlVerificator {
         return tempFile.exists();
     }
 
-    public  Assertion getAssertion(String URL) throws IOException, ParserConfigurationException, SAXException {
+    public Assertion getAssertion(String URL) throws IOException, ParserConfigurationException, SAXException {
         if(verificationUrl(URL)){
             Assertion assertion = new Assertion();
             assertion.setSamlString(ReadXMLFile.file2String(new File(URL)));

@@ -5,15 +5,13 @@ import org.web3j.crypto.RawTransaction;
 import org.web3j.crypto.TransactionEncoder;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
-import org.web3j.protocol.core.methods.response.EthGetBalance;
-import org.web3j.protocol.core.methods.response.EthGetTransactionCount;
-import org.web3j.protocol.core.methods.response.EthSendTransaction;
-import org.web3j.protocol.core.methods.response.Web3ClientVersion;
+import org.web3j.protocol.core.methods.response.*;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 public class Web3Utils {
@@ -29,6 +27,7 @@ public class Web3Utils {
                     .get();
             return ethGetBalance.getBalance();
     }
+
     public static String doTransaction(String address, String hash) throws Exception {
         BigInteger gasprice = BigInteger.valueOf(30000);
         BigInteger gaslimit = BigInteger.valueOf(30000);
@@ -50,5 +49,16 @@ public class Web3Utils {
         String transactionHash = ethSendTransaction.getTransactionHash();
         return transactionHash;
 
+    }
+
+    public static boolean verifyAssertion(String hashBlockchain, String hash) throws IOException {
+        Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
+        Optional<Transaction> tx = web3.ethGetTransactionByHash(hashBlockchain).send().getTransaction();
+        if (tx.isPresent()) {
+            System.out.println(tx.get().getInput());
+            System.out.println(tx.get().getInput());
+            return tx.get().getInput().equals(hash);
+        }
+        return false;
     }
 }

@@ -11,7 +11,9 @@
     <title>Congratulation</title>
 </head>
 <body>
-Congratulation, the transaction sent to <%= request.getParameter("address") %> with hash ${hash}!<br>
-Your assertion is at ${path}
+Congratulation, the transaction sent to <%= request.getParameter("address") %>
+hash : "${hash}"!<br>
+Your assertion is at "${path}"<br>
+address : "${address}"
 </body>
 </html>

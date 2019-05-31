@@ -11,6 +11,9 @@
     <title>Result</title>
 </head>
 <body>
-    ${result}
+    ${result} <br>
+    hash = "${hash}"<br>
+    address = "${address}"
+    path = "${path}"
 </body>
 </html>

@@ -22,9 +22,9 @@ public class Servlet extends javax.servlet.http.HttpServlet {
                 path = assertion.getURL();
                 String payload = CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
                 hashBlockchain = Web3Utils.doTransaction(address, payload);
-                request.setAttribute("address", address);
-                request.setAttribute("path", path);
                 request.setAttribute("hash", hashBlockchain);
+                request.setAttribute("path", path);
+                request.setAttribute("address", address);
             } catch (Exception e) {
                 e.printStackTrace();
             }
