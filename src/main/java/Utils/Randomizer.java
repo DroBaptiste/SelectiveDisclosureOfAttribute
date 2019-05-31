@@ -1,6 +1,6 @@
 package Utils;
 
-public class Utils {
+public class Randomizer {
     private static final String ALPHA_NUMERIC_STRING = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     public static String randomAlphaNumeric(int count) {

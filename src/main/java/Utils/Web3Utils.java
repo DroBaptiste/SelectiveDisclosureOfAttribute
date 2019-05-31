@@ -55,8 +55,6 @@ public class Web3Utils {
         Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
         Optional<Transaction> tx = web3.ethGetTransactionByHash(hashBlockchain).send().getTransaction();
         if (tx.isPresent()) {
-            System.out.println(tx.get().getInput());
-            System.out.println(tx.get().getInput());
             return tx.get().getInput().equals(hash);
         }
         return false;

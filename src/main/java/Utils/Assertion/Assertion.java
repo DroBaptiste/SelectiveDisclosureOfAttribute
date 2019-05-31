@@ -1,5 +1,6 @@
-package Register.Backend;
+package Utils.Assertion;
 
+import Utils.XML.XMLFileTreatment;
 import org.apache.log4j.BasicConfigurator;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Response;

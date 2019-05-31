@@ -1,6 +1,6 @@
-package Utils.SP;
+package Utils.Assertion;
 
-import Register.Backend.Assertion;
+import Utils.XML.ReadXMLFile;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -19,7 +19,7 @@ public class SamlVerificator {
         if(verificationUrl(URL)){
             Assertion assertion = new Assertion();
             assertion.setSamlString(ReadXMLFile.file2String(new File(URL)));
-            Document document =ReadXMLFile.readXMLFile(URL);
+            Document document = ReadXMLFile.readXMLFile(URL);
             assertion.setIdAssertion(ReadXMLFile.getIdAssertion(document));
             assertion.setVersionAssertion(ReadXMLFile.getVersion(document));
             assertion.setIssueInstant(ReadXMLFile.getIssueInstant(document));

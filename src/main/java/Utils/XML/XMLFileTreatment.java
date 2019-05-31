@@ -1,6 +1,6 @@
-package Register.Backend;
+package Utils.XML;
 
-import Utils.Utils;
+import Utils.Randomizer;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -36,7 +36,7 @@ public class XMLFileTreatment {
     }
 
     private static String generateFileName(){
-        String name = Utils.randomAlphaNumeric(20);
+        String name = Randomizer.randomAlphaNumeric(20);
         name = name + ".xml";
         return name;
     }

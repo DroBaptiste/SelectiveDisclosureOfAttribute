@@ -1,8 +1,9 @@
 package Register.Servlets;
 
-import Register.Backend.Assertion;
+import Assertion;
+import SamlVerificator;
 import Utils.CryptoUtils;
-import Utils.Utils;
+import Utils.Randomizer;
 import Utils.Web3Utils;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.math.BigInteger;
 public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         if(request.getParameter("code").equals(request.getParameter("inputCode"))) {
+            SamlVerificator samlVerificator = new SamlVerificator();
             BigInteger balance = null;
             Assertion assertion = null;
             String hashBlockchain;
@@ -20,7 +22,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             try {
                 assertion = new Assertion("ENSICAEN","Diplome d'ingénieur", address);
                 path = assertion.getURL();
-                String payload = CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
+                String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
                 hashBlockchain = Web3Utils.doTransaction(address, payload);
                 request.setAttribute("hash", hashBlockchain);
                 request.setAttribute("path", path);
@@ -42,7 +44,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String code = Utils.randomAlphaNumeric(10);
+        String code = Randomizer.randomAlphaNumeric(10);
         request.setAttribute("code", code);
         request.getRequestDispatcher("challenge.jsp").forward(request, response);
     }

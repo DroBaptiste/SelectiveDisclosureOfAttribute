@@ -1,7 +1,7 @@
 package Consult.Servlets;
 
-import Register.Backend.Assertion;
-import Utils.SP.SamlVerificator;
+import Utils.Assertion.Assertion;
+import Utils.Assertion.SamlVerificator;
 import Utils.Web3Utils;
 import org.xml.sax.SAXException;
 
