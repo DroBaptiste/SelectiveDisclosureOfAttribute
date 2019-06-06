@@ -1,19 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
   User: dromard
-  Date: 31/05/19
-  Time: 13.54
+  Date: 04/06/19
+  Time: 18.01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Result</title>
+    <title>Look at the accounts</title>
+    <%@ include file="stylesheet.jsp"%>
 </head>
 <body>
-    ${result} <br>
-    hash = "${hash}"<br>
-    address = "${address}"
-    path = "${path}"
+
+<%@ include file="navbar.jsp"%>
+
+<div class="container">${account}</div>
+<%@ include file="javascript.jsp"%>
 </body>
 </html>

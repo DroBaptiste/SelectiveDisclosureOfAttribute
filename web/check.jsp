@@ -9,14 +9,18 @@
 <html>
 <head>
     <title>Home consulting</title>
+    <%@ include file="stylesheet.jsp"%>
 </head>
 <body>
-<form action="./servlet" method="post">
+
+<%@ include file="navbar.jsp"%>
+<form action="request?action=R" method="post">
     URL of the assertion :
     <input type="text" placeholder="Assertions URL" name="url"></br>
     Transaction Number :
     <input type="text" placeholder="Transaction Number" name="hash">
     <input type="submit" value="Press">
 </form>
+<%@ include file="javascript.jsp"%>
 </body>
 </html>

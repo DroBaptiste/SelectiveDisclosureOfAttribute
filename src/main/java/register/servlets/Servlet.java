@@ -1,5 +1,6 @@
 package register.servlets;
 
+import utils.Account;
 import utils.CryptoUtils;
 import utils.Randomizer;
 import utils.Web3Utils;
@@ -12,34 +13,29 @@ import java.math.BigInteger;
 
 public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        if(request.getParameter("code").equals(request.getParameter("inputCode"))) {
-            SamlVerificator samlVerificator = new SamlVerificator();
-            BigInteger balance = null;
-            Assertion assertion = null;
-            String hashBlockchain;
-            String path = "";
-            String address = request.getParameter("address");
-            try {
-                assertion = new Assertion("ENSICAEN","Diplome d'ingénieur", address);
-                path = assertion.getURL();
-                String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
-                hashBlockchain = Web3Utils.doTransaction(address, payload);
-                request.setAttribute("hash", hashBlockchain);
-                request.setAttribute("path", path);
-                request.setAttribute("address", address);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if (path.isEmpty()) {
-                request.setAttribute("error", "Error, can't handle the request");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            } else {
-                request.getRequestDispatcher("answer.jsp").forward(request, response);
-            }
-
+        SamlVerificator samlVerificator = new SamlVerificator();
+        BigInteger balance = null;
+        Assertion assertion = null;
+        String hashBlockchain;
+        String path = "";
+        Account account = (Account) request.getSession().getAttribute("account");
+        String address = account.getAddress();
+        request.setAttribute("address", address);
+        try {
+            assertion = new Assertion("ENSICAEN",request.getParameter("assertion"), address);
+            path = assertion.getURL();
+            String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
+            hashBlockchain = Web3Utils.doTransaction(address, payload);
+            request.setAttribute("hash", hashBlockchain);
+            request.setAttribute("path", path);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (path.isEmpty()) {
+            request.setAttribute("error", "Error, can't handle the request");
+            request.getRequestDispatcher("check.jsp").forward(request, response);
         } else {
-            request.setAttribute("error", "Error, wrong check code");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("answer.jsp").forward(request, response);
         }
     }
 

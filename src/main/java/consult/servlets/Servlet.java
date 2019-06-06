@@ -1,13 +1,10 @@
 package consult.servlets;
 
-import org.xml.sax.SAXException;
 import utils.Web3Utils;
 import utils.assertion.Assertion;
 import utils.assertion.SamlVerificator;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 
 public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -24,7 +21,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             request.setAttribute("address", address);
             request.setAttribute("path", path);
             request.setAttribute("hash", hash);
-        } catch (ParserConfigurationException | SAXException | NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

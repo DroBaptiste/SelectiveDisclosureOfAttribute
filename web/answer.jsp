@@ -9,11 +9,13 @@
 <html>
 <head>
     <title>Congratulation</title>
+    <%@ include file="stylesheet.jsp"%>
 </head>
 <body>
-Congratulation, the transaction sent to <%= request.getParameter("address") %>
-hash : "${hash}"!<br>
-Your assertion is at "${path}"<br>
-address : "${address}"
+<%@ include file="navbar.jsp"%>
+Congratulation, the transaction sent to ${address}
+hash : "${hash}"!<br/>
+Your assertion is at "${path}"<br/>
+<%@ include file="javascript.jsp"%>
 </body>
 </html>
