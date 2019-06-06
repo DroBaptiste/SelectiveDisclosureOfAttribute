@@ -11,7 +11,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         String path = request.getParameter("url");
         String hashBlockchain = request.getParameter("hash");
         String content = "";
-        String address = "";
+        String address;
         String hash = "";
         SamlVerificator samlVerificator = new SamlVerificator();
         try {
@@ -25,7 +25,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             e.printStackTrace();
         }
 
-        if(Web3Utils.verifyAssertion(hashBlockchain, hash)) {
+        if (Web3Utils.verifyAssertion(hashBlockchain, hash)) {
             request.setAttribute("result", "The assertion is valid");
 
         } else {
@@ -34,6 +34,6 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         request.getRequestDispatcher("result.jsp").forward(request, response);
     }
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException {
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
     }
 }

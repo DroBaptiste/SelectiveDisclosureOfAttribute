@@ -18,11 +18,11 @@ import java.util.Map;
 import java.util.UUID;
 
 
-public class SamlAssertionProducer {
+class SamlAssertionProducer {
 
 
-    public Response createSAMLResponse(final String subjectId, final DateTime authenticationTime,
-                                       final String credentialType, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
+    Response createSAMLResponse(final String subjectId, final DateTime authenticationTime,
+                                final String credentialType, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
 
         try {
             DefaultBootstrap.bootstrap();
@@ -51,7 +51,7 @@ public class SamlAssertionProducer {
             Assertion assertion = createAssertion(new DateTime(), subject, assertionIssuer, authnStatement, attributeStatement);
 
             Response response = createResponse(new DateTime(), responseIssuer, status, assertion);
-           // response.setSignature(signature);
+            // response.setSignature(signature);
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(response);

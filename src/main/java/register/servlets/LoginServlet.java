@@ -11,9 +11,9 @@ import java.io.IOException;
 public class LoginServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         HttpSession session = request.getSession();
-        if(session.getAttribute("account") != null) {
+        if (session.getAttribute("account") != null) {
             request.getRequestDispatcher("challenge.jsp").forward(request, response);
-        } else if(request.getParameter("address") != null) {
+        } else if (request.getParameter("address") != null) {
             Account account = MockTestLogin.login(request.getParameter("address"), request.getParameter("password"));
             if (account != null) {
                 session.setAttribute("account", account);
@@ -31,7 +31,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
     }
 
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
     }
 
 }

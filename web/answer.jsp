@@ -9,13 +9,13 @@
 <html>
 <head>
     <title>Congratulation</title>
-    <%@ include file="stylesheet.jsp"%>
+    <%@ include file="stylesheet.jsp" %>
 </head>
 <body>
-<%@ include file="navbar.jsp"%>
+<%@ include file="navbar.jsp" %>
 Congratulation, the transaction sent to ${address}
 hash : "${hash}"!<br/>
 Your assertion is at "${path}"<br/>
-<%@ include file="javascript.jsp"%>
+<%@ include file="javascript.jsp" %>
 </body>
 </html>

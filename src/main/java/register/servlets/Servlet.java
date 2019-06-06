@@ -15,14 +15,14 @@ public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         SamlVerificator samlVerificator = new SamlVerificator();
         BigInteger balance = null;
-        Assertion assertion = null;
+        Assertion assertion;
         String hashBlockchain;
         String path = "";
         Account account = (Account) request.getSession().getAttribute("account");
         String address = account.getAddress();
         request.setAttribute("address", address);
         try {
-            assertion = new Assertion("ENSICAEN",request.getParameter("assertion"), address);
+            assertion = new Assertion("ENSICAEN", request.getParameter("assertion"), address);
             path = assertion.getURL();
             String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
             hashBlockchain = Web3Utils.doTransaction(address, payload);

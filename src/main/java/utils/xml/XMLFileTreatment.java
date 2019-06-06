@@ -29,13 +29,13 @@ public class XMLFileTreatment {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
 
-        String path = "../"+ generateFileName();
-        StreamResult result =  new StreamResult(new File(path));
+        String path = "../" + generateFileName();
+        StreamResult result = new StreamResult(new File(path));
         transformer.transform(source, result);
         return path;
     }
 
-    private static String generateFileName(){
+    private static String generateFileName() {
         String name = Randomizer.randomAlphaNumeric(20);
         name = name + ".xml";
         return name;

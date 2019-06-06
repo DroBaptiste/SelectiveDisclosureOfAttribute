@@ -7,13 +7,12 @@
             <li><a href="request?action=check">Verify an assertion</a></li>
         </ul>
         <%
-            if (request.getSession().getAttribute("account") != null)
-            {
+            if (request.getSession().getAttribute("account") != null) {
         %>
-            <ul id="nav-mobile2" class="right hide-on-med-and-down">
-                <li><p>Connected with address ${account.getAddress()}</p></li>
-                <li><a href="request?action=D">Logout</a></li>
-            </ul>
+        <ul id="nav-mobile2" class="right hide-on-med-and-down">
+            <li><p>Connected with address ${account.getAddress()}</p></li>
+            <li><a href="request?action=D">Logout</a></li>
+        </ul>
         <% }
         %>
     </div>

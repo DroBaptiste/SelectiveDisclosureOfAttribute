@@ -7,15 +7,15 @@ import java.security.NoSuchAlgorithmException;
 public class CryptoUtils {
 
 
-    public static String sha256Payload(String blockchainAddressSubject, String assertion, String url ) throws NoSuchAlgorithmException {
-        String inputValue = blockchainAddressSubject + assertion  + url ;
+    public static String sha256Payload(String blockchainAddressSubject, String assertion, String url) throws NoSuchAlgorithmException {
+        String inputValue = blockchainAddressSubject + assertion + url;
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] messageDigest = md.digest(inputValue.getBytes());
         BigInteger no = new BigInteger(1, messageDigest);
-        String hashtext = no.toString(16);
+        StringBuilder hashtext = new StringBuilder(no.toString(16));
         while (hashtext.length() < 32) {
-            hashtext = "0" + hashtext;
+            hashtext.insert(0, "0");
         }
-        return hashtext;
+        return hashtext.toString();
     }
 }

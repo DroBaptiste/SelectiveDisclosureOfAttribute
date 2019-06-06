@@ -25,51 +25,51 @@ public class ReadXMLFile {
         return doc;
     }
 
-    public static String getIdAssertion(Document doc){
+    public static String getIdAssertion(Document doc) {
         NodeList nodeList = doc.getElementsByTagName("saml2p:Response");
         String id = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
-            Node nNode =nodeList.item(temp);
+            Node nNode = nodeList.item(temp);
             id = nNode.getAttributes().getNamedItem("ID").getNodeValue();
         }
         return id;
     }
 
-    public static String getVersion(Document doc){
+    public static String getVersion(Document doc) {
         NodeList nodeList = doc.getElementsByTagName("saml2p:Response");
         String version = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
-            Node nNode =nodeList.item(temp);
+            Node nNode = nodeList.item(temp);
             version = nNode.getAttributes().getNamedItem("Version").getNodeValue();
         }
         return version;
     }
 
-    public static String getIssueInstant(Document doc){
+    public static String getIssueInstant(Document doc) {
         NodeList nodeList = doc.getElementsByTagName("saml2p:Response");
         String instant = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
-            Node nNode =nodeList.item(temp);
+            Node nNode = nodeList.item(temp);
             instant = nNode.getAttributes().getNamedItem("IssueInstant").getNodeValue();
         }
         return instant;
     }
 
-    public static String getAP(Document doc){
+    public static String getAP(Document doc) {
         NodeList nodeList = doc.getElementsByTagName("saml2:Issuer");
         String AP = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
-            Node nNode =nodeList.item(temp);
+            Node nNode = nodeList.item(temp);
             AP = nNode.getFirstChild().getNodeValue();
         }
         return AP;
     }
 
-    public static String getSubject(Document doc){
+    public static String getSubject(Document doc) {
         NodeList nodeList = doc.getElementsByTagName("saml2:Subject");
         String subject = "";
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
-            Node nNode =nodeList.item(temp);
+            Node nNode = nodeList.item(temp);
             subject = nNode.getFirstChild().getFirstChild().getNodeValue();
         }
         return subject;

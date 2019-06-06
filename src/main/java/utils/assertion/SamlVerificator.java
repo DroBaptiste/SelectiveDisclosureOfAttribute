@@ -10,13 +10,13 @@ import java.io.IOException;
 
 public class SamlVerificator {
 
-    private boolean verificationUrl(String URL){
+    private boolean verificationUrl(String URL) {
         File tempFile = new File(URL);
         return tempFile.exists();
     }
 
     public Assertion getAssertion(String URL) throws IOException, ParserConfigurationException, SAXException {
-        if(verificationUrl(URL)){
+        if (verificationUrl(URL)) {
             Assertion assertion = new Assertion();
             assertion.setSamlString(ReadXMLFile.file2String(new File(URL)));
             Document document = ReadXMLFile.readXMLFile(URL);
@@ -27,7 +27,7 @@ public class SamlVerificator {
             assertion.setURL(URL);
             assertion.setBlockchainAddressOfSubject(ReadXMLFile.getSubject(document));
             return assertion;
-        }else{
+        } else {
             return null;
         }
     }

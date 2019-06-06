@@ -9,7 +9,7 @@ public class Randomizer {
 
         while (count-- != 0) {
 
-            int character = (int)(Math.random()*ALPHA_NUMERIC_STRING.length());
+            int character = (int) (Math.random() * ALPHA_NUMERIC_STRING.length());
 
             builder.append(ALPHA_NUMERIC_STRING.charAt(character));
 

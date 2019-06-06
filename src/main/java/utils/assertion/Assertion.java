@@ -37,14 +37,8 @@ public class Assertion {
     private String blockchainAddressOfSubject;
 
 
-    public String getURL() {
-        return URL;
-    }
-
     Assertion() {
     }
-
-
 
     public Assertion(String _attributeProvider, String _value, String _blockchainAddressOfSubject) throws SAXException, TransformerException, ParserConfigurationException, IOException {
         this.attributeProvider = _attributeProvider;
@@ -52,6 +46,10 @@ public class Assertion {
         this.blockchainAddressOfSubject = _blockchainAddressOfSubject;
         this.samlString = generateSAML();
         URL = XMLFileTreatment.StringToFile(samlString);
+    }
+
+    public String getURL() {
+        return URL;
     }
 
     void setURL(String URL) {

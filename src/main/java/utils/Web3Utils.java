@@ -21,11 +21,11 @@ public class Web3Utils {
         String clientVersion = web3ClientVersion.getWeb3ClientVersion();
         System.out.println(clientVersion);
         EthGetBalance ethGetBalance;
-            ethGetBalance = web3
-                    .ethGetBalance(address, DefaultBlockParameterName.LATEST)
-                    .sendAsync()
-                    .get();
-            return ethGetBalance.getBalance();
+        ethGetBalance = web3
+                .ethGetBalance(address, DefaultBlockParameterName.LATEST)
+                .sendAsync()
+                .get();
+        return ethGetBalance.getBalance();
     }
 
     public static String doTransaction(String address, String hash) throws Exception {
