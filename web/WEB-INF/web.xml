@@ -7,7 +7,7 @@
     <filter>
         <display-name>AuthFilter</display-name>
         <filter-name>AuthFilter</filter-name>
-        <filter-class>register.servlets.AuthFilter</filter-class>
+        <filter-class>servlet.register.AuthFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
@@ -19,7 +19,7 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>register.servlets.Servlet</servlet-class>
+        <servlet-class>servlet.register.Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -28,7 +28,7 @@
 
     <servlet>
         <servlet-name>AccountServlet</servlet-name>
-        <servlet-class>register.servlets.AccountServlet</servlet-class>
+        <servlet-class>servlet.register.AccountServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AccountServlet</servlet-name>
@@ -37,7 +37,7 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>register.servlets.LoginServlet</servlet-class>
+        <servlet-class>servlet.register.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -46,7 +46,7 @@
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>register.servlets.LogoutServlet</servlet-class>
+        <servlet-class>servlet.register.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -55,7 +55,7 @@
 
     <servlet>
         <servlet-name>ServletDispatcher</servlet-name>
-        <servlet-class>register.servlets.ServletDispatcher</servlet-class>
+        <servlet-class>servlet.ServletDispatcher</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletDispatcher</servlet-name>
@@ -64,7 +64,7 @@
 
     <servlet>
         <servlet-name>ConsultServlet</servlet-name>
-        <servlet-class>consult.servlets.Servlet</servlet-class>
+        <servlet-class>servlet.consult.Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConsultServlet</servlet-name>
