@@ -22,7 +22,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         String address = account.getAddress();
         request.setAttribute("address", address);
         try {
-            assertion = new Assertion("ENSICAEN", request.getParameter("assertion"), address);
+            assertion = new Assertion("ENSICAEN", request.getParameter("assertion"), address , "365");
             path = assertion.getURL();
             String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
             hashBlockchain = Web3Utils.doTransaction(address, payload);
