@@ -25,7 +25,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
                 request.getRequestDispatcher("challenge.jsp").forward(request, response);
             } else {
                 request.setAttribute("error", "Login/password invalid");
-                request.getRequestDispatcher("check.jsp").forward(request, response);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }
     }

@@ -11,7 +11,6 @@ import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.math.BigInteger;
-import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 public class Web3Utils {
@@ -51,16 +50,18 @@ public class Web3Utils {
     }
 
     public static boolean verifyAssertion(String hashBlockchain, String hash) throws IOException {
+
         Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
-        Optional<Transaction> tx = web3.ethGetTransactionByHash(hashBlockchain).send().getTransaction();
-        return tx.map(transaction -> transaction.getInput().equals(hash)).orElse(false);
+        Transaction tx = web3.ethGetTransactionByHash(hashBlockchain).send().getTransaction().get();
+
+        return tx.getInput().equals(hash);
     }
 
     public static boolean verifyOwner(String hashBlockchain, String hash, String address) throws IOException {
+
         Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
         Transaction tx = web3.ethGetTransactionByHash(hashBlockchain).send().getTransaction().get();
-        return tx.getInput().equals(hash) && tx.getFrom().equalsIgnoreCase(address) ;
-    }
 
-    
+        return tx.getInput().equals(hash) && tx.getFrom().equalsIgnoreCase(address);
+    }
 }
