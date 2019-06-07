@@ -88,4 +88,24 @@ public class ReadXMLFile {
             return stringBuilder.toString();
         }
     }
+
+    public static String getValue(Document document) {
+        NodeList nodeList = document.getElementsByTagName("saml2:AuthnContextClassRef");
+        String value = "";
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode = nodeList.item(temp);
+            value = nNode.getFirstChild().getNodeValue();
+        }
+        return value.substring(value.lastIndexOf(":")+1);
+    }
+
+    public static String getValidity(Document document) {
+        NodeList nodeList = document.getElementsByTagName("saml2:Subject");
+        String subject = "";
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode = nodeList.item(temp);
+            subject = nNode.getLastChild().getFirstChild().getAttributes().getNamedItem("NotOnOrAfter").getNodeValue();
+        }
+        return subject;
+    }
 }

@@ -26,6 +26,8 @@ public class SamlVerificator {
             assertion.setAttributeProvider(ReadXMLFile.getAP(document));
             assertion.setURL(URL);
             assertion.setBlockchainAddressOfSubject(ReadXMLFile.getSubject(document));
+            assertion.setValue(ReadXMLFile.getValue(document));
+            assertion.setValidity(ReadXMLFile.getValidity(document));
             return assertion;
         } else {
             return null;

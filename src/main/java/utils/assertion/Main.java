@@ -10,6 +10,9 @@ public class Main {
     public static void main(String[] args) throws SAXException, ParserConfigurationException, IOException, TransformerException {
 
         Assertion assertion = new Assertion("Driver class","Driver licence B","Dromard Baptiste","365");
-        System.out.println(assertion.getURL());
+        SamlVerificator samlVerificator = new SamlVerificator();
+        Assertion assertion1 = new Assertion();
+        assertion1 = samlVerificator.getAssertion(assertion.getURL());
+        System.out.println(assertion1.getValidity());
     }
 }
