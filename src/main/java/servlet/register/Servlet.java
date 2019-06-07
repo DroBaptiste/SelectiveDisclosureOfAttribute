@@ -33,7 +33,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         }
         if (path.isEmpty()) {
             request.setAttribute("error", "Error, can't handle the request");
-            request.getRequestDispatcher("check.jsp").forward(request, response);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("answer.jsp").forward(request, response);
         }

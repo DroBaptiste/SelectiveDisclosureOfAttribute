@@ -16,6 +16,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.nio.file.Paths;
 
 public class XMLFileTreatment {
     public static String StringToFile(String xmlSource) throws SAXException, ParserConfigurationException, IOException, TransformerException {
@@ -29,7 +30,7 @@ public class XMLFileTreatment {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
 
-        String path = "../" + generateFileName();
+        String path = Paths.get("") + "/" + generateFileName();
         StreamResult result = new StreamResult(new File(path));
         transformer.transform(source, result);
         return path;

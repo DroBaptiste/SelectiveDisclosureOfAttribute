@@ -1,4 +1,4 @@
-package servlet.register;
+package servlet;
 
 import utils.Account;
 
