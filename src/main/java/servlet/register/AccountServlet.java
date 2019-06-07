@@ -39,7 +39,7 @@ public class AccountServlet extends javax.servlet.http.HttpServlet {
             content.append("</tr>");
         }
         content.append("</table>");
-        request.setAttribute("account", content.toString());
+        request.setAttribute("accountList", content.toString());
         request.getRequestDispatcher("account.jsp").forward(request, response);
     }
 

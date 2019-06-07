@@ -15,9 +15,7 @@
 
 <%@ include file="navbar.jsp" %>
 ${result} <br>
-hash = "${hash}"<br>
-address = "${address}"
-path = "${path}"
+${assertion}
 <%@ include file="javascript.jsp" %>
 </body>
 </html>

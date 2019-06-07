@@ -19,7 +19,8 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             address = assertion.getBlockchainAddressOfSubject();
             hash = "0x" + utils.CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
             request.setAttribute("address", address);
-            System.out.println(address);
+            request.setAttribute("assertion", assertion);
+            request.setAttribute("assertionString", "Issuer : " + assertion.getAttributeProvider() +  "<br/>" + "Value : " + assertion.getValue());
         } catch (Exception e) {
             e.printStackTrace();
         }
