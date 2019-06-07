@@ -22,7 +22,7 @@ class SamlAssertionProducer {
 
 
     Response createSAMLResponse(final String subjectId, final DateTime authenticationTime,
-                                final String credentialType, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
+                                final String credentials, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
 
         try {
             DefaultBootstrap.bootstrap();
@@ -46,7 +46,7 @@ class SamlAssertionProducer {
                 attributeStatement = createAttributeStatement(attributes);
             }
 
-            AuthnStatement authnStatement = createAuthnStatement(authenticationTime);
+            AuthnStatement authnStatement = createAuthnStatement(authenticationTime,credentials);
 
             Assertion assertion = createAssertion(new DateTime(), subject, assertionIssuer, authnStatement, attributeStatement);
 
@@ -139,11 +139,11 @@ class SamlAssertionProducer {
         return subject;
     }
 
-    private AuthnStatement createAuthnStatement(final DateTime issueDate) {
+    private AuthnStatement createAuthnStatement(final DateTime issueDate, final String credentials) {
         // create authcontextclassref object
         AuthnContextClassRefBuilder classRefBuilder = new AuthnContextClassRefBuilder();
         AuthnContextClassRef classRef = classRefBuilder.buildObject();
-        classRef.setAuthnContextClassRef("urn:oasis:names:tc:SAML:2.0:ac:classes:selfSouvreignIdentity");
+        classRef.setAuthnContextClassRef("urn:oasis:names:tc:SAML:2.0:ac:classes:" + credentials);
 
         // create authcontext object
         AuthnContextBuilder authContextBuilder = new AuthnContextBuilder();

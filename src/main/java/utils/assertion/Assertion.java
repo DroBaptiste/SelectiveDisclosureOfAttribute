@@ -28,11 +28,8 @@ public class Assertion {
     private String URL;
     private String samlString;
 
-    private String signatureOfIssuer;
-    private Time startValidityInstant;
-    private Time endValidityInstant;
+    private String validity;
     private String value;
-
 
     private String blockchainAddressOfSubject;
 
@@ -40,11 +37,12 @@ public class Assertion {
     Assertion() {
     }
 
-    public Assertion(String _attributeProvider, String _value, String _blockchainAddressOfSubject) throws SAXException, TransformerException, ParserConfigurationException, IOException {
+    public Assertion(String _attributeProvider, String _value, String _blockchainAddressOfSubject, String _validity) throws SAXException, TransformerException, ParserConfigurationException, IOException {
         this.attributeProvider = _attributeProvider;
         this.value = _value;
+        this.validity = _validity;
         this.blockchainAddressOfSubject = _blockchainAddressOfSubject;
-        this.samlString = generateSAML();
+        this.samlString = generateSAML(_value, _validity);
         URL = XMLFileTreatment.StringToFile(samlString);
     }
 
@@ -56,18 +54,17 @@ public class Assertion {
         this.URL = URL;
     }
 
-    private String generateSAML() {
+    private String generateSAML(String _credantialtype, String _validity) {
         BasicConfigurator.configure();
         try {
             HashMap<String, List<String>> attributes = new HashMap<>();
             String issuer = attributeProvider;
             String subject = blockchainAddressOfSubject;
 
-            Integer samlAssertionExpirationDays = 12;
 
             SamlAssertionProducer producer = new SamlAssertionProducer();
             Response responseInitial = producer.createSAMLResponse(subject, new DateTime(),
-                    "password", attributes, issuer, samlAssertionExpirationDays);
+                    _credantialtype, attributes, issuer, Integer.valueOf(_validity));
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(responseInitial);
@@ -113,30 +110,6 @@ public class Assertion {
         this.attributeProvider = attributeProvider;
     }
 
-    public String getSignatureOfIssuer() {
-        return signatureOfIssuer;
-    }
-
-    public void setSignatureOfIssuer(String signatureOfIssuer) {
-        this.signatureOfIssuer = signatureOfIssuer;
-    }
-
-    public Time getStartValidityInstant() {
-        return startValidityInstant;
-    }
-
-    public void setStartValidityInstant(Time startValidityInstant) {
-        this.startValidityInstant = startValidityInstant;
-    }
-
-    public Time getEndValidityInstant() {
-        return endValidityInstant;
-    }
-
-    public void setEndValidityInstant(Time endValidityInstant) {
-        this.endValidityInstant = endValidityInstant;
-    }
-
     public String getValue() {
         return value;
     }
@@ -159,5 +132,13 @@ public class Assertion {
 
     void setSamlString(String samlString) {
         this.samlString = samlString;
+    }
+
+    public String getValidity() {
+        return validity;
+    }
+
+    public void setValidity(String validity) {
+        this.validity = validity;
     }
 }
