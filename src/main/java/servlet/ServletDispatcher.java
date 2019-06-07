@@ -25,6 +25,9 @@ public class ServletDispatcher extends javax.servlet.http.HttpServlet {
             case "R":
                 request.getRequestDispatcher("result").forward(request, response);
                 break;
+            case "O":
+                request.getRequestDispatcher("owner").forward(request, response);
+                break;
             default:
                 break;
         }
@@ -50,10 +53,10 @@ public class ServletDispatcher extends javax.servlet.http.HttpServlet {
                 request.getRequestDispatcher("check.jsp").forward(request, response);
                 break;
             case "R":
-                request.getRequestDispatcher("owner").forward(request, response);
+                request.getRequestDispatcher("result").forward(request, response);
                 break;
             case "O":
-                request.getRequestDispatcher("result").forward(request, response);
+                request.getRequestDispatcher("owner").forward(request, response);
             default:
                 break;
         }

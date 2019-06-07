@@ -1,6 +1,5 @@
 package servlet.consult;
 
-import utils.Randomizer;
 import utils.Web3Utils;
 import utils.assertion.Assertion;
 import utils.assertion.SamlVerificator;
@@ -20,8 +19,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             address = assertion.getBlockchainAddressOfSubject();
             hash = "0x" + utils.CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
             request.setAttribute("address", address);
-            request.setAttribute("path", path);
-            request.setAttribute("hash", hash);
+            System.out.println(address);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,7 +30,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         } else {
             request.setAttribute("result", false);
         }
-        request.setAttribute("random", Randomizer.randomAlphaNumeric(6));
+        request.setAttribute("random", "0x12");
         request.getRequestDispatcher("owner.jsp").forward(request, response);
     }
 
