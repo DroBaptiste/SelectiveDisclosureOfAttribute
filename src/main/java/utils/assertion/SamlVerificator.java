@@ -2,6 +2,7 @@ package utils.assertion;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+import utils.CryptoUtils;
 import utils.xml.ReadXMLFile;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -27,7 +28,7 @@ public class SamlVerificator {
             assertion.setURL(URL);
             assertion.setBlockchainAddressOfSubject(ReadXMLFile.getSubject(document));
             assertion.setValue(ReadXMLFile.getValue(document));
-            assertion.setValidity(ReadXMLFile.getValidity(document));
+            assertion.setValidity(String.valueOf(CryptoUtils.nbrDays(ReadXMLFile.getValidity(document),assertion.getIssueInstant())));
             return assertion;
         } else {
             return null;
