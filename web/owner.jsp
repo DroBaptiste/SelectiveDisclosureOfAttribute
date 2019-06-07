@@ -20,6 +20,7 @@
     Send this random text to the address 0x8fa7173202d86C746bd884C9f116E356600c6b0E "${random}" : <br/>
     <input type="hidden" name="random" value="${random}">
     <input type="hidden" name="address" value="${address}">
+    <input type="hidden" name="assertionString" value="${assertionString}">
     <input type="text" placeholder="Transaction Number" name="hash">
     <input type="submit" value="Press">
 </form>

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="utils.Account" %><%--
   Created by IntelliJ IDEA.
   User: dromard
   Date: 27/05/19
@@ -18,18 +18,29 @@
         <form class="col" action="assertion" method="post">
 
             <div class='row'>
+                <%
+                    Account account = (Account) request.getSession().getAttribute("account");
+                    if (account.isDriver()) {
+                %>
                 <p>
                     <label>
-                        <input name="assertion" type="radio" value="driver" checked/>
+                        <input name="assertion" type="radio" value="Driver License" checked/>
                         <span>Driver License</span>
                     </label>
                 </p>
+                <%
+                    }
+                    if (account.isAdult()) {
+                %>
                 <p>
                     <label>
-                        <input name="assertion" type="radio" name="adult"/>
+                        <input name="assertion" type="radio" value="Adult proof"/>
                         <span>Adult proof</span>
                     </label>
                 </p>
+                <%
+                    }
+                %>
             </div>
 
             <br/>

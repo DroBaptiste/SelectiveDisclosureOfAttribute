@@ -12,6 +12,7 @@ public class OwnerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(Web3Utils.verifyOwner(request.getParameter("hash"), request.getParameter("random"), request.getParameter("address"))) {
             request.setAttribute("result", "This assertion is valid.");
+            request.setAttribute("assertion", request.getParameter("assertionString"));
             request.getRequestDispatcher("result.jsp").forward(request, response);
         } else {
             request.setAttribute("result", "Sorry, this assertion is invalid or the verification is incorrect.");
