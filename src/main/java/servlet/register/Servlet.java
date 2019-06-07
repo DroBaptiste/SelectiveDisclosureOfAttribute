@@ -29,14 +29,10 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             request.setAttribute("hash", hashBlockchain);
             request.setAttribute("path", path);
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (path.isEmpty()) {
             request.setAttribute("error", "Error, can't handle the request");
             request.getRequestDispatcher("index.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("answer.jsp").forward(request, response);
         }
+            request.getRequestDispatcher("answer.jsp").forward(request, response);
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
