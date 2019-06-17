@@ -1,6 +1,7 @@
 package utils.assertion;
 
 import org.xml.sax.SAXException;
+import utils.CryptoUtils;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -13,6 +14,6 @@ public class Main {
         SamlVerificator samlVerificator = new SamlVerificator();
         Assertion assertion1 = new Assertion();
         assertion1 = samlVerificator.getAssertion(assertion.getURL());
-        System.out.println(assertion1.getValidity());
+        System.out.println(CryptoUtils.dateExpiration(assertion.getIssueInstant(),assertion.getValidity()));
     }
 }
