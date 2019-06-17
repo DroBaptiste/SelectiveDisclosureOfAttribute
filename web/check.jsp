@@ -18,7 +18,7 @@
     URL of the assertion :
     <input type="text" placeholder="Assertions URL" name="url"></br>
     Transaction Number :
-    <input type="text" placeholder="Transaction Number" name="hash">
+    <input type="text" placeholder="Transaction Number " name="hash">
     <input type="submit" value="Press">
 </form>
 <%@ include file="javascript.jsp" %>
