@@ -27,26 +27,19 @@ public class AuthFilter implements Filter {
             account = (Account) session.getAttribute("account");
         }
         boolean isLoggedIn = (account != null);
-        // Check if the user is accessing login page
         if (req.getRequestURI().equals(
                 req.getContextPath() + "/index.jsp")) {
             if (isLoggedIn) {
-                // Redirect to landing or home page
                 HttpServletResponse res = (HttpServletResponse) response;
                 res.sendRedirect(req.getContextPath()
                         + "/challenge.jsp");
             } else {
-                // Otherwise, nothing to do if he has not logged in
-                // pass the request along the filter chain
                 chain.doFilter(request, response);
             }
         } else {
-            // For all other pages,
             if (isLoggedIn) {
-                // Nothing to do
                 chain.doFilter(request, response);
             } else {
-                // Redirect to login page if he has not logged in
                 HttpServletResponse res = (HttpServletResponse) response;
                 res.sendRedirect(req.getContextPath() + "/index.jsp");
             }

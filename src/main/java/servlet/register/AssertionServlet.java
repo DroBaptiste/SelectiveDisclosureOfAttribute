@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 
 
-public class Servlet extends javax.servlet.http.HttpServlet {
+public class AssertionServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         SamlVerificator samlVerificator = new SamlVerificator();
         BigInteger balance = null;
@@ -29,7 +29,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             request.setAttribute("hash", hashBlockchain);
             request.setAttribute("path", path);
         } catch (Exception e) {
-            request.setAttribute("error", "Error, can't handle the request");
+            request.setAttribute("error", "Error, can't handle the request : " + e);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
             request.getRequestDispatcher("answer.jsp").forward(request, response);

@@ -6,7 +6,7 @@ import utils.assertion.SamlVerificator;
 
 import java.io.IOException;
 
-public class Servlet extends javax.servlet.http.HttpServlet {
+public class AssertionServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String path = request.getParameter("url");
         String hashBlockchain = request.getParameter("hash");

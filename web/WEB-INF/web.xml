@@ -19,7 +19,7 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>servlet.register.Servlet</servlet-class>
+        <servlet-class>servlet.register.AssertionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -64,7 +64,7 @@
 
     <servlet>
         <servlet-name>ConsultServlet</servlet-name>
-        <servlet-class>servlet.consult.Servlet</servlet-class>
+        <servlet-class>servlet.consult.AssertionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConsultServlet</servlet-name>
