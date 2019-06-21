@@ -35,7 +35,8 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
             credentials.put("location", path);
 
             PrintWriter out = response.getWriter();
-            response.setContentType("application/json");
+            response.setContentType("application/force-download");
+            response.setHeader("Content-Disposition","attachment; filename=\"" + "Credential\"");
             response.getWriter().write(credentials.toJSONString());
 
         } catch (Exception e) {

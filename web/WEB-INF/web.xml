@@ -88,13 +88,4 @@
         <servlet-name>OwnerServlet</servlet-name>
         <url-pattern>/owner</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DownloadServlet</servlet-name>
-        <servlet-class>servlet.register.DownloadServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DownloadServlet</servlet-name>
-        <url-pattern>/download</url-pattern>
-    </servlet-mapping>
 </web-app>

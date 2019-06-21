@@ -18,7 +18,7 @@ public class Web3Utils {
     private static Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
     private static Credentials credentials = Credentials.create("a19c85dc8d02dc778233fea6f3d50df369c149026b1abf0dcb310fef9189fd1e");
 
-    public static BigInteger getBalance(String address) throws IOException, ExecutionException, InterruptedException {
+    public  BigInteger getBalance(String address) throws IOException, ExecutionException, InterruptedException {
         Web3ClientVersion web3ClientVersion = web3.web3ClientVersion().send();
         String clientVersion = web3ClientVersion.getWeb3ClientVersion();
         System.out.println(clientVersion);
@@ -43,7 +43,7 @@ public class Web3Utils {
         byte[] signedMessage = TransactionEncoder.signMessage(transaction, credentials);
         String hexValue = Numeric.toHexString(signedMessage);
         EthSendTransaction ethSendTransaction = web3.ethSendRawTransaction(hexValue).send();
-
+        web3.shutdown();
         return ethSendTransaction.getTransactionHash();
 
     }
