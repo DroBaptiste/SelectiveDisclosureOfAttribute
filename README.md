@@ -15,15 +15,15 @@ This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
 ## Registration :pencil:
 
-The content of ```src/main/java/Register``` is related to the Registration tool.
+The content of ```src/main/java/servlet/register``` is related to the Registration tool.
 
 ## Consulting :eyes:
 
-The content of ```src/main/java/Consult``` is related the Consulting tool.
+The content of ```src/main/java/servlet/consult``` is related the Consulting tool.
 
 ## Utility :wrench:
 
-the folder ```src/main/java/Utils``` contains all the utility function.
+the folder ```src/main/java/utils``` contains all the utility function.
 
 ##### Assertion
 
@@ -37,7 +37,7 @@ XML folder contains all the classes and functions needed to manipulate XML files
 
 CryptoUtils contain the function needed to hash the contain to place in the blockchain such as ```address + assertion + URL```
 
-##### Randomize
+##### Randomizer
 
 This folder contains a function to generate random name that we use to place the assertion or generate a random challenge
 
