@@ -16,6 +16,7 @@
 Congratulation, the transaction sent to ${address}
 hash : "${hash}"!<br/>
 Your assertion is at "${path}"<br/>
+<a href="download?filename=credential.json" target="_blank">Click here to download file</a>
 <%@ include file="javascript.jsp" %>
 </body>
 </html>

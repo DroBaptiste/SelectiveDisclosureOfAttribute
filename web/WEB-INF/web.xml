@@ -72,11 +72,29 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>servlet.consult.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>OwnerServlet</servlet-name>
         <servlet-class>servlet.consult.OwnerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>OwnerServlet</servlet-name>
         <url-pattern>/owner</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>servlet.register.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/download</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -16,6 +16,7 @@
 <%@ include file="navbar.jsp" %>
 ${result} <br>
 ${assertion}
+${message}
 <%@ include file="javascript.jsp" %>
 </body>
 </html>

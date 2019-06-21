@@ -15,7 +15,7 @@
 
 <%@ include file="navbar.jsp" %>
 
-<div class="container">${account}</div>
+<div class="container">${accountList}</div>
 <%@ include file="javascript.jsp" %>
 </body>
 </html>

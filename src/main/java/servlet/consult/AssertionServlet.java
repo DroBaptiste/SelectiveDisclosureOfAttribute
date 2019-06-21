@@ -1,15 +1,28 @@
 package servlet.consult;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import utils.Web3Utils;
 import utils.assertion.Assertion;
 import utils.assertion.SamlVerificator;
 
+import javax.servlet.http.Part;
+import java.io.FileReader;
+import java.io.*;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Paths;
+import java.util.Iterator;
+import java.util.List;
 
 public class AssertionServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String path = request.getParameter("url");
-        String hashBlockchain = request.getParameter("hash");
+        String path = (String) request.getAttribute("location");
+        String hashBlockchain = (String) request.getAttribute("hash");
+        response.getWriter().println(path + hashBlockchain);
         String content = "";
         String address;
         String hash = "";
@@ -36,5 +49,6 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
+
     }
 }
