@@ -28,15 +28,13 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
             request.setAttribute("hash", hashBlockchain);
             request.setAttribute("path", path);
 
-
-
             JSONObject credentials = new JSONObject();
             credentials.put("hash", hashBlockchain);
             credentials.put("location", path);
 
             PrintWriter out = response.getWriter();
             response.setContentType("application/force-download");
-            response.setHeader("Content-Disposition","attachment; filename=\"" + "Credential\"");
+            response.setHeader("Content-Disposition","attachment; filename=\"" + "Credential.json\"");
             response.getWriter().write(credentials.toJSONString());
 
         } catch (Exception e) {

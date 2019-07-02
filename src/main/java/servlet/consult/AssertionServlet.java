@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class AssertionServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -38,14 +39,20 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
             e.printStackTrace();
         }
 
-        if (Web3Utils.verifyAssertion(hashBlockchain, hash)) {
-            request.setAttribute("result", true);
-
-        } else {
-            request.setAttribute("result", false);
+        try {
+            if (Web3Utils.verifyAssertion(hashBlockchain, hash)) {
+                request.setAttribute("result", true);
+                request.setAttribute("random", "0x12");
+                request.getRequestDispatcher("owner.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error", "invalid assertion");
+                request.getRequestDispatcher("verification.jsp").forward(request, response);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("error", e);
+            request.getRequestDispatcher("verification.jsp").forward(request, response);
         }
-        request.setAttribute("random", "0x12");
-        request.getRequestDispatcher("owner.jsp").forward(request, response);
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {

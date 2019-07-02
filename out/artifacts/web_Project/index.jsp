@@ -48,7 +48,7 @@
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
                 <span class="card-title">How to do</span>
-                <p>You can get an attribute for the needed account. for more information about accounts just look at
+                <p>You can get an attribute for the needed account. For more information about accounts just look at
                     Account page.</p>
             </div>
         </div>
