@@ -8,10 +8,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class ReadXMLFile {
 
@@ -107,5 +104,25 @@ public class ReadXMLFile {
             subject = nNode.getLastChild().getFirstChild().getAttributes().getNamedItem("NotOnOrAfter").getNodeValue();
         }
         return subject;
+    }
+    public static String readFile(String url) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader (url));
+        String line = null;
+        StringBuilder  stringBuilder = new StringBuilder();
+        String ls = System.getProperty("line.separator");
+
+        try {
+            while((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+                stringBuilder.append(ls);
+            }
+
+            return stringBuilder.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            reader.close();
+        }
+        return line;
     }
 }

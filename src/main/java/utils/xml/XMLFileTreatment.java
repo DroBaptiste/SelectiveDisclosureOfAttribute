@@ -1,6 +1,6 @@
 package utils.xml;
 
-import org.w3c.dom.Document;
+import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import utils.Randomizer;
@@ -17,6 +17,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
 
 public class XMLFileTreatment {
     public static String StringToFile(String xmlSource) throws SAXException, ParserConfigurationException, IOException, TransformerException {
@@ -40,5 +45,35 @@ public class XMLFileTreatment {
         String name = Randomizer.randomAlphaNumeric(20);
         name = name + ".xml";
         return name;
+    }
+    public static void addUrl(String url) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        Document doc = docBuilder.parse(url);
+        Node statues = doc.getElementsByTagName("saml2p:StatusCode").item(0);
+        NamedNodeMap attr = statues.getAttributes();
+        Node nodeAttr = attr.getNamedItem("Value");
+        nodeAttr.setTextContent(url+"%");
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File(url));
+        transformer.transform(source, result);
+    }
+
+    public static void addBckchID(String url, String _bckID) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+        String filepath = url;
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        Document doc = docBuilder.parse(filepath);
+        Node statues = doc.getElementsByTagName("saml2p:StatusCode").item(0);
+        NamedNodeMap attr = statues.getAttributes();
+        Node nodeAttr = attr.getNamedItem("Value");
+        nodeAttr.setTextContent(url+"%"+_bckID);
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File(filepath));
+        transformer.transform(source, result);
     }
 }

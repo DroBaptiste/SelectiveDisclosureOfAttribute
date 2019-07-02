@@ -7,6 +7,7 @@ import org.opensaml.saml2.core.impl.ResponseMarshaller;
 import org.opensaml.xml.util.XMLHelper;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import utils.xml.ReadXMLFile;
 import utils.xml.XMLFileTreatment;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -28,10 +29,20 @@ public class Assertion {
     private String URL;
     private String samlString;
 
+    public String getTransactionID() {
+        return transactionID;
+    }
+
+    public void setTransactionID(String transactionID) throws ParserConfigurationException, TransformerException, SAXException, IOException {
+        this.transactionID = transactionID;
+        XMLFileTreatment.addBckchID(this.getURL(),transactionID);
+    }
+
     private String validity;
     private String value;
 
     private String blockchainAddressOfSubject;
+    private String transactionID;
 
 
     Assertion() {
@@ -42,10 +53,15 @@ public class Assertion {
         this.value = _value;
         this.validity = _validity;
         this.blockchainAddressOfSubject = _blockchainAddressOfSubject;
-        this.samlString = generateSAML(_value, _validity);
+        this.samlString = generateSAML(_value, _validity,"", "" );
         URL = XMLFileTreatment.StringToFile(samlString);
+        XMLFileTreatment.addUrl(URL);
+        updateSamlString();
     }
 
+    private void updateSamlString() throws IOException, SAXException, ParserConfigurationException {
+        this.samlString = ReadXMLFile.readFile(this.getURL());
+    }
     public String getURL() {
         return URL;
     }
@@ -54,7 +70,7 @@ public class Assertion {
         this.URL = URL;
     }
 
-    private String generateSAML(String _credantialtype, String _validity) {
+    private String generateSAML(String _credantialtype, String _validity, String url, String idBlockchain) {
         BasicConfigurator.configure();
         try {
             HashMap<String, List<String>> attributes = new HashMap<>();
@@ -64,7 +80,7 @@ public class Assertion {
 
             SamlAssertionProducer producer = new SamlAssertionProducer();
             Response responseInitial = producer.createSAMLResponse(subject, new DateTime(),
-                    _credantialtype, attributes, issuer, Integer.valueOf(_validity));
+                    url,_credantialtype, attributes, issuer, Integer.valueOf(_validity));
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(responseInitial);

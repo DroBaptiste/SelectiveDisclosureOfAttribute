@@ -22,12 +22,12 @@ class SamlAssertionProducer {
 
 
     Response createSAMLResponse(final String subjectId, final DateTime authenticationTime,
-                                final String credentials, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
+                                final String urlAdress,final String classCredentials, final HashMap<String, List<String>> attributes, String issuer, Integer samlAssertionDays) {
 
         try {
             DefaultBootstrap.bootstrap();
 
-            Status status = createStatus();
+            Status status = createStatus(urlAdress);
             Issuer responseIssuer = null;
             Issuer assertionIssuer = null;
             Subject subject = null;
@@ -46,19 +46,16 @@ class SamlAssertionProducer {
                 attributeStatement = createAttributeStatement(attributes);
             }
 
-            AuthnStatement authnStatement = createAuthnStatement(authenticationTime,credentials);
+            AuthnStatement authnStatement = createAuthnStatement(authenticationTime,classCredentials);
 
             Assertion assertion = createAssertion(new DateTime(), subject, assertionIssuer, authnStatement, attributeStatement);
 
             Response response = createResponse(new DateTime(), responseIssuer, status, assertion);
-            // response.setSignature(signature);
+
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(response);
 
-           /* if (signature != null) {
-                Signer.signObject(signature);
-            }*/
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             XMLHelper.writeNode(element, baos);
@@ -184,10 +181,10 @@ class SamlAssertionProducer {
         return attributeStatement;
     }
 
-    private Status createStatus() {
+    private Status createStatus(String url) {
         StatusCodeBuilder statusCodeBuilder = new StatusCodeBuilder();
         StatusCode statusCode = statusCodeBuilder.buildObject();
-        statusCode.setValue(StatusCode.SUCCESS_URI);
+        statusCode.setValue(url+"%");
 
         StatusBuilder statusBuilder = new StatusBuilder();
         Status status = statusBuilder.buildObject();
