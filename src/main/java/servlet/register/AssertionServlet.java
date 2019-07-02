@@ -22,20 +22,18 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
         try {
             assertion = new Assertion("ENSICAEN", request.getParameter("assertion"), address , "365");
             path = assertion.getURL();
-            String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
+            String payload = CryptoUtils.sha256Payload(samlVerificator.getAssertion(path).getSamlString());
             hashBlockchain = Web3Utils.doTransaction(address, payload);
 
             request.setAttribute("hash", hashBlockchain);
             request.setAttribute("path", path);
 
-            JSONObject credentials = new JSONObject();
-            credentials.put("hash", hashBlockchain);
-            credentials.put("location", path);
+            //assertion.setHash("hashBlockchain");
 
             PrintWriter out = response.getWriter();
             response.setContentType("application/force-download");
-            response.setHeader("Content-Disposition","attachment; filename=\"" + "Credential.json\"");
-            response.getWriter().write(credentials.toJSONString());
+            response.setHeader("Content-Disposition","attachment; filename=\"" + "assertion.xml\"");
+            response.getWriter().write(assertion.getSamlString());
 
         } catch (Exception e) {
             request.setAttribute("error", "Error, can't handle the request : " + e);
