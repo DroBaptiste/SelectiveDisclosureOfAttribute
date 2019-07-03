@@ -11,7 +11,7 @@ import java.util.Date;
 public class CryptoUtils {
 
 
-    public static String sha256Payload(, String assertion) throws NoSuchAlgorithmException {
+    public static String sha256Payload(String assertion) throws NoSuchAlgorithmException {
         String inputValue = assertion;
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] messageDigest = md.digest(inputValue.getBytes());
