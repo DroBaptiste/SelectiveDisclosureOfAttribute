@@ -22,13 +22,11 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
         try {
             assertion = new Assertion("ENSICAEN", request.getParameter("assertion"), address , "365");
             path = assertion.getURL();
-            String payload = CryptoUtils.sha256Payload(address, samlVerificator.getAssertion(path).getSamlString(), path);
+            String payload = CryptoUtils.sha256Payload(samlVerificator.getAssertion(path).getSamlString());
             hashBlockchain = Web3Utils.doTransaction(address, payload);
 
             request.setAttribute("hash", hashBlockchain);
             request.setAttribute("path", path);
-
-
 
             JSONObject credentials = new JSONObject();
             credentials.put("hash", hashBlockchain);
@@ -36,14 +34,14 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
 
             PrintWriter out = response.getWriter();
             response.setContentType("application/force-download");
-            response.setHeader("Content-Disposition","attachment; filename=\"" + "Credential\"");
+            response.setHeader("Content-Disposition","attachment; filename=\"" + "Credential.json\"");
             response.getWriter().write(credentials.toJSONString());
 
         } catch (Exception e) {
             request.setAttribute("error", "Error, can't handle the request : " + e);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
-            //request.getRequestDispatcher("answer.jsp").forward(request, response);
+        //request.getRequestDispatcher("answer.jsp").forward(request, response);
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {

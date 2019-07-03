@@ -11,8 +11,8 @@ import java.util.Date;
 public class CryptoUtils {
 
 
-    public static String sha256Payload(String blockchainAddressSubject, String assertion, String url) throws NoSuchAlgorithmException {
-        String inputValue = blockchainAddressSubject + assertion + url;
+    public static String sha256Payload(, String assertion) throws NoSuchAlgorithmException {
+        String inputValue = assertion;
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] messageDigest = md.digest(inputValue.getBytes());
         BigInteger no = new BigInteger(1, messageDigest);
