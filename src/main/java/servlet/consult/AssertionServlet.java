@@ -23,7 +23,7 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String path = (String) request.getAttribute("location");
         String hashBlockchain = (String) request.getAttribute("hash");
-        response.getWriter().println(path + hashBlockchain);
+
         String content = "";
         String address;
         String hash = "";
@@ -31,7 +31,7 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
         try {
             Assertion assertion = samlVerificator.getAssertion(path);
             address = assertion.getBlockchainAddressOfSubject();
-            hash = "0x" + utils.CryptoUtils.sha256Payload(address, assertion.getSamlString(), path);
+            hash = "0x" + utils.CryptoUtils.sha256Payload(assertion.getSamlString());
             request.setAttribute("address", address);
             request.setAttribute("assertion", assertion);
             request.setAttribute("assertionString", "Issuer : " + assertion.getAttributeProvider() +  "<br/>" + "Value : " + assertion.getValue());
@@ -45,7 +45,7 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
                 request.setAttribute("random", "0x12");
                 request.getRequestDispatcher("owner.jsp").forward(request, response);
             } else {
-                request.setAttribute("error", "invalid assertion");
+                request.setAttribute("error", "invalid assertion " + path);
                 request.getRequestDispatcher("verification.jsp").forward(request, response);
             }
         } catch (Exception e) {
