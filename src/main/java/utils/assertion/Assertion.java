@@ -2,6 +2,7 @@ package utils.assertion;
 
 import org.apache.log4j.BasicConfigurator;
 import org.joda.time.DateTime;
+import org.json.simple.parser.ParseException;
 import org.opensaml.saml2.core.Response;
 import org.opensaml.saml2.core.impl.ResponseMarshaller;
 import org.opensaml.xml.util.XMLHelper;
@@ -14,7 +15,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.sql.Time;
 import java.util.HashMap;
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class Assertion {
     Assertion() {
     }
 
-    public Assertion(String _attributeProvider, String _value, String _blockchainAddressOfSubject, String _validity) throws SAXException, TransformerException, ParserConfigurationException, IOException {
+    public Assertion(String _attributeProvider, String _value, String _blockchainAddressOfSubject, String _validity) throws SAXException, TransformerException, ParserConfigurationException, IOException, ParseException {
         this.attributeProvider = _attributeProvider;
         this.value = _value;
         this.validity = _validity;
@@ -143,7 +143,7 @@ public class Assertion {
     }
 
     public String getSamlString() {
-        return samlString;
+        return samlString.replaceAll("\n", "");
     }
 
     void setSamlString(String samlString) {

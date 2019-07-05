@@ -35,7 +35,6 @@ public class JsonTreatment {
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(path));
         JSONObject jsonObject =  (JSONObject) obj;
-
         this.token = (String) jsonObject.get("token");
         this.location = (String) jsonObject.get("location");
     }

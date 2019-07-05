@@ -1,6 +1,8 @@
 package utils.xml;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import utils.Randomizer;
@@ -17,11 +19,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
 
 public class XMLFileTreatment {
     public static String StringToFile(String xmlSource) throws SAXException, ParserConfigurationException, IOException, TransformerException {
@@ -34,11 +31,11 @@ public class XMLFileTreatment {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-
-        String path = Paths.get("").toAbsolutePath().toString() + File.separator + generateFileName();
+        String genName = generateFileName();
+        String path = Paths.get("").toAbsolutePath().toString() + File.separator + genName;
         StreamResult result = new StreamResult(new File(path));
         transformer.transform(source, result);
-        return path;
+        return genName;
     }
 
     private static String generateFileName() {
