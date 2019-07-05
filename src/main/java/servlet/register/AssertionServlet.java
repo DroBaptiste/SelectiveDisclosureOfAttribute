@@ -32,7 +32,7 @@ public class AssertionServlet extends javax.servlet.http.HttpServlet {
 
             response.setContentType("application/force-download");
             response.setHeader("Content-Disposition","attachment; filename=\"" + "credential.json\"");
-            response.getWriter().write(assertion.getSamlString());
+            response.getWriter().write(credential.toJSONString());
 
         } catch (Exception e) {
             request.setAttribute("error", "Error, can't handle the request : " + e);
