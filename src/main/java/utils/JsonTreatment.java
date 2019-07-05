@@ -4,17 +4,19 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class JsonTreatment {
 
-    String hash;
+    String token;
     String location;
 
 
-    public static void createFile(String hash, String location) {
+    public static void createFile(String token, String location) {
         JSONObject credentials = new JSONObject();
-        credentials.put("hash", hash);
+        credentials.put("token", token);
         credentials.put("location", location);
         try (FileWriter file = new FileWriter("credential.json")) {
 
@@ -34,13 +36,13 @@ public class JsonTreatment {
         Object obj = parser.parse(new FileReader(path));
         JSONObject jsonObject =  (JSONObject) obj;
 
-        this.hash = (String) jsonObject.get("hash");
+        this.token = (String) jsonObject.get("token");
         this.location = (String) jsonObject.get("location");
     }
 
 
-    public String getHash() {
-        return hash;
+    public String getToken() {
+        return token;
     }
 
     public String getLocation() {

@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="j2etest" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.20" ALTERNATIVE_JRE_ENABLED="false">
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/web_Project" />
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/web_Project" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
       <artifact name="web:Project">
@@ -11,6 +11,7 @@
     </deployment>
     <server-settings>
       <option name="BASE_DIRECTORY_NAME" value="Unnamed_j2etest" />
+      <option name="HTTP_PORT" value="8081" />
     </server-settings>
     <log_file alias="Tomcat Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/manager.*" />
     <log_file alias="Tomcat Host Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/host-manager.*" />
