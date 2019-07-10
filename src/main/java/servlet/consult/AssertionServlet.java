@@ -1,23 +1,25 @@
 package servlet.consult;
 
-import org.xml.sax.SAXException;
 import utils.Web3Utils;
+import utils.assertion.Assertion;
 import utils.assertion.SamlVerificator;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+
 
 public class AssertionServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String url = (String) request.getAttribute("location");
         String token = (String) request.getAttribute("token");
         try {
-            String address = new SamlVerificator().getAssertion(url).getBlockchainAddressOfSubject();
-            request.setAttribute("address", address);
-        } catch (ParserConfigurationException | SAXException e) {
+            Assertion assertion = new SamlVerificator().getAssertionOnline(url);
+            request.setAttribute("address", assertion.getBlockchainAddressOfSubject());
+            request.setAttribute("assertionString", assertion.getValue());
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
         try {

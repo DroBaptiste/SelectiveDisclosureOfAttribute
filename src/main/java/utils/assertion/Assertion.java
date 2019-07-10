@@ -28,22 +28,15 @@ public class Assertion {
     private String attributeProvider;
     private String URL;
     private String samlString;
-
-    public String getTransactionID() {
-        return transactionID;
-    }
-
-    public void setTransactionID(String transactionID) throws ParserConfigurationException, TransformerException, SAXException, IOException {
-        this.transactionID = transactionID;
-        XMLFileTreatment.addBckchID(this.getURL(),transactionID);
-    }
-
     private String validity;
     private String value;
 
     private String blockchainAddressOfSubject;
     private String transactionID;
 
+    public String getTransactionID() {
+        return transactionID;
+    }
 
     Assertion() {
     }
@@ -70,7 +63,7 @@ public class Assertion {
         this.URL = URL;
     }
 
-    private String generateSAML(String _credantialtype, String _validity, String url, String idBlockchain) {
+    private String generateSAML(String _credentialType, String _validity, String url, String idBlockchain) {
         BasicConfigurator.configure();
         try {
             HashMap<String, List<String>> attributes = new HashMap<>();
@@ -80,7 +73,7 @@ public class Assertion {
 
             SamlAssertionProducer producer = new SamlAssertionProducer();
             Response responseInitial = producer.createSAMLResponse(subject, new DateTime(),
-                    url,_credantialtype, attributes, issuer, Integer.valueOf(_validity));
+                    url, _credentialType, attributes, issuer, Integer.valueOf(_validity));
 
             ResponseMarshaller marshaller = new ResponseMarshaller();
             Element element = marshaller.marshall(responseInitial);

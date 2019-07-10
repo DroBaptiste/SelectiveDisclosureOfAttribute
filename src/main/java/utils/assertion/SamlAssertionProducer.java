@@ -184,7 +184,7 @@ class SamlAssertionProducer {
     private Status createStatus(String url) {
         StatusCodeBuilder statusCodeBuilder = new StatusCodeBuilder();
         StatusCode statusCode = statusCodeBuilder.buildObject();
-        statusCode.setValue(url+"%");
+        statusCode.setValue(url);
 
         StatusBuilder statusBuilder = new StatusBuilder();
         Status status = statusBuilder.buildObject();
