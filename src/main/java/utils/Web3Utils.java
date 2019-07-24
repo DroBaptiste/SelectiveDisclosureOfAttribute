@@ -29,7 +29,6 @@ public class Web3Utils {
         String token = result.getLogs().get(0).getData();
         return token;
     }
-
     private BigInteger estimateGas(String encodedFunction) throws Exception {
         EthEstimateGas ethEstimateGas = web3.ethEstimateGas(
                 Transaction.createEthCallTransaction(credentials.getAddress(), null, encodedFunction))
