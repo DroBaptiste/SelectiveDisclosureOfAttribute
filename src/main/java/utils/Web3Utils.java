@@ -27,6 +27,7 @@ import static junit.framework.TestCase.assertFalse;
 
 public class Web3Utils {
 
+
     private static Web3j web3 = Web3j.build(new HttpService("https://ropsten.infura.io/v3/0be11186c2cb444482e8f0ab666cc1fc"));
     private static Credentials credentials = Credentials.create("a19c85dc8d02dc778233fea6f3d50df369c149026b1abf0dcb310fef9189fd1e");
     private static final String CONTRACT_ADDRESS = "0xe7735d18d09573578a42d79559be4bdf48ef4fab";//"0x81A595E19dD37B2e69C0cd6bff5114341BfB6B8f";
