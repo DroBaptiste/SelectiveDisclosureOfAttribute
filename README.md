@@ -18,7 +18,7 @@ This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
 # How it works
 
-To use this java application with tomcat you first need to create a jsonfile ```config.json``` in your tomcat bin repository including a ```domain``` field your domain (for exemple https://myDomain.com).
+To use this java application with tomcat you first need to create a jsonfile ```config.json``` in your tomcat bin repository including a ```domain``` field your domain (for exemple ```https://myDomain.com```).
 
 # Components
 
