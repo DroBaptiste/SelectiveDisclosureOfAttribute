@@ -4,14 +4,23 @@
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
 ### Summary
-* [Registration](#registration-pencil)   
-* [Consulting](#consulting-eyes) 
-* [Utility](#utility-wrench)   
-  * [Assertion](#assertion)
-  * [XML](#xml)
-  * [CryptoUtils](#cryptoutils)
-  * [Randomize](#randomize)
-  * [Web3Utils](#Web3Utils)
+* [How it works]
+* [Components]
+ * [Registration](#registration-pencil)   
+ * [Consulting](#consulting-eyes) 
+ * [Utility](#utility-wrench)   
+   * [Assertion](#assertion)
+   * [XML](#xml)
+   * [CryptoUtils](#cryptoutils)
+   * [Randomize](#randomize)
+   * [Web3Utils](#Web3Utils)
+   
+
+# How it works
+
+To use this java application with tomcat you first need to create a jsonfile in your tomcat bin repository including your domain.
+
+# Components
 
 ## Registration :pencil:
 
