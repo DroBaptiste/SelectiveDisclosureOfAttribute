@@ -7,12 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41fffc87-21cf-4e87-befb-36314dfd5243" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$AssertionResultEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$AssertionResultEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$LogConstructorInitiatedEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$LogConstructorInitiatedEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$LogNewProvableQueryEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$LogNewProvableQueryEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$LogVerificationEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$LogVerificationEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$QueryInitiatedEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$QueryInitiatedEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$TokenIndexedEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract$TokenIndexedEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/contract/VerificationContract.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/utils/Web3Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/utils/Web3Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/utils/assertion/Assertion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/utils/assertion/Assertion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/utils/assertion/SamlVerificator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_Project/WEB-INF/classes/utils/assertion/SamlVerificator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/contract/VerificationContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/contract/VerificationContract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Web3Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Web3Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$AssertionResultEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$AssertionResultEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$LogConstructorInitiatedEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$LogConstructorInitiatedEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$LogNewProvableQueryEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$LogNewProvableQueryEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$LogVerificationEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$LogVerificationEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$QueryInitiatedEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$QueryInitiatedEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract$TokenIndexedEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract$TokenIndexedEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/contract/VerificationContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/contract/VerificationContract.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Web3Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Web3Utils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +64,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/JsonTreatment.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/Web3Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+            <state relative-caret-position="300">
+              <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,10 +76,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/Web3Utils.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -44,8 +87,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/AssertionServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="255">
               <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,22 +106,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/assertion/SamlAssertionProducer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/UploadServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/CryptoUtils.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/VerificationServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="60">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -83,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/register/AssertionServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="255">
               <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -113,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/javascript.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="75">
               <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
@@ -129,6 +172,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/servlet/register/AssertionServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/Web3Utils.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -150,12 +194,20 @@
       <select />
     </treeState>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="554" />
+    <option name="y" value="229" />
+    <option name="width" value="927" />
+    <option name="height" value="789" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,18 +239,46 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="j2etest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="j2etest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="j2etest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="j2etest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="consult" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="j2etest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="j2etest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.45172414" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -240,9 +320,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.j2etest" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Tomcat Server.j2etest" />
     </list>
     <recent_temporary>
       <list>
@@ -257,10 +337,20 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41fffc87-21cf-4e87-befb-36314dfd5243" name="Default Changelist" comment="" />
+      <created>1563978778690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563978778690</updated>
+      <workItem from="1563978793602" duration="2258000" />
+      <workItem from="1564042908931" duration="2121000" />
+      <workItem from="1564049165977" duration="172000" />
+    </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250000" />
+    <option name="totallyTimeSpent" value="6446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -273,32 +363,35 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" sideWeight="0.5016077" side_tool="true" weight="0.192031" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.49839228" visible="true" weight="0.16436082" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.49839228" visible="true" weight="0.17100166" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49418926" visible="true" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4017709" weight="0.32937366" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.39845046" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4980631" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975097" weight="0.32937366" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5982291" side_tool="true" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.6015495" side_tool="true" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Application Servers" order="9" sideWeight="0.4964029" weight="0.3099352" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4986165" weight="0.32937366" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.4991699" weight="0.32937366" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49252906" weight="0.32937366" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.42888767" weight="0.3336933" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.42667404" weight="0.3336933" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24958494" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.048699502" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21306032" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.32982844" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -327,20 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/AssertionServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/OwnerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="122" selection-start-line="11" selection-start-column="122" selection-end-line="11" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/assertion/SamlAssertionProducer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -355,6 +434,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Web3Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/contract/VerificationContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/AssertionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/OwnerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="122" selection-start-line="11" selection-start-column="122" selection-end-line="11" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/UploadServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/consult/VerificationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/register/AssertionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -374,27 +511,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/javascript.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/register/AssertionServlet.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Web3Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>web:Project</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.45172414" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Detection</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.45172414" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>SelectiveDisclosureOfAttribute</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.45172414" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.45172414" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
