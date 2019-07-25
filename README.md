@@ -44,7 +44,7 @@ XML folder contains all the classes and functions needed to manipulate XML files
 
 ##### CryptoUtils
 
-CryptoUtils contain the function needed to hash the contain to place in the blockchain such as ```address + assertion + URL```
+CryptoUtils contain the function needed to hash the contain to place in the blockchain such as the assertion
 
 ##### Randomizer
 
