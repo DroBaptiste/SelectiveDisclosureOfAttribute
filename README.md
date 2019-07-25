@@ -4,8 +4,8 @@
 This project is based on an internship made in 2019 in Reggio di Calabria, Italy
 
 ### Summary
-* [How it works]
-* [Components]
+* [How it works](#how-it-works) 
+* [Components](#components) 
  * [Registration](#registration-pencil)   
  * [Consulting](#consulting-eyes) 
  * [Utility](#utility-wrench)   
